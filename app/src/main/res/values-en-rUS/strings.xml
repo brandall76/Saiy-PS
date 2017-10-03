@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2016. Saiy Ltd. All Rights Reserved.
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published
+  ~ by the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="title_customisation" translatable="true">Customization</string>
+    <string name="error_hotword" translatable="true">"Hotword engine failed to initialize :("</string>
+    <string name="menu_synthesised_voice" translatable="true">Google Synthesized Voice</string>
+
+    <string name="notification_initialising_tts" translatable="true">"Initializing TTS"</string>
+
+    <string name="cancelled" translatable="true">"cancelled"</string>
+    <string name="analyse" translatable="true">"analyze"</string>
+    <string name="vocal_notify_verify" translatable="true">"Okay. I'll notify you know when I've analyzed the audio."</string>
+
+
+    <string name="bug_content_delay_speech" translatable="true">Text to speech engines take up a lot of resource
+        and consequently can take a while to initialize and be ready to speak. This is more common on higher
+        quality engines, regardless of whether they are downloaded and installed on the device or not.\n\nIn the
+        Superuser Settings, under Memory Usage, you can adjust how long the text to speech engine is bound to
+        Saiy and kept in the memory. The longer allowed time, the less likely the initialization process
+        will be required for subsequent commands\n\nThis additional memory usage
+        should be negligible to the performance of any modern device. If Android needs the memory back,
+        it will take it!\n\nIn the Saiy Settings, if you have selected to use the network synthesized voices
+        (available via Google\'s text to speech engine), a delay can occur due to the speed of your network
+        connection. If your mobile connectivity is a little hit and miss, disabling this feature unless you are
+        connected to WiFi, could certainly help…\n\nTap for settings. Tap and hold for Superuser Settings</string>
+
+    <!-- Speech - No command was understood -->
+    <string-array name="array_no_comprende" translatable="true">
+        <item>"Really sorry %1$s, but I'm not sure what you meant by that."</item>
+        <item>"Really sorry, but I'm not sure what you meant by that %1$s."</item>
+        <item>"I'm sorry %1$s, but I didn't recognize that command."</item>
+        <item>"I'm sorry, but I didn't recognize that command  %1$s."</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - error -->
+    <string-array name="array_beyond_verbal_error" translatable="true">
+        <item>"Sorry %1$s, but I'm afraid the emotion analysis failed."</item>
+        <item>"Sorry %1$s, but I'm afraid I was unable to analyze the emotions of the audio."</item>
+        <item>"Apologies %1$s, but I failed to successfully analyze the emotional content."</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal -->
+    <string-array name="array_beyond_verbal" translatable="true">
+        <item>"OK %1$s. I'll be listening."</item>
+        <item>"OK %1$s. I'm ready to analyze you."</item>
+    </string-array>
+
+    <string name="beyond_verbal_extra_verbose" translatable="true">"OK %1$s. In order for me to analyze
+        your emotional state, you need to speak for at least thirteen seconds. After that, I'll
+        detect when you've finished speaking. You could tell me about your day today, or about a
+        memory from your past. If you can't think of anything, just close your eyes and count slowly
+        up to fifteen, whilst your mind wanders. I'll let you know with a notification when the
+        analysis is complete."</string>
+
+</resources>

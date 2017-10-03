@@ -1,0 +1,3 @@
+wakeupsay /1e-20/
+okaygoogle /1e-30/
+stoplistening /1e-20/

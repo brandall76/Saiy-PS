@@ -1,0 +1,1159 @@
+<!--
+  ~ Copyright (c) 2016. Saiy Ltd. All Rights Reserved.
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published
+  ~ by the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <!-- SPEECH STRINGS -->
+
+    <!-- PLEASE NOTE -->
+    <!-- Specific errors should only have one entry, so a user can 'quote' them in a bug report.
+    Or at the very least convey the error type so the issue can be easily identified -->
+
+    <!-- License Strings -->
+    <string name="google_play_services" translatable="false">Google Play Services</string>
+    <string name="license_android_open_source" translatable="false">The Android Open Source Project</string>
+    <string name="gson" translatable="false">GSON</string>
+    <string name="license_google_inc" translatable="false">Copyright © Google Inc.</string>
+    <string name="volley" translatable="false">Volley</string>
+    <string name="license_volley" translatable="false">Xiaoke Zhang &amp; The Android Open Source Project</string>
+    <string name="two_forty_four" translatable="false">Two Forty Four a.m.</string>
+    <string name="license_two_forty_four" translatable="false">Copyright © 2012 two forty four a.m. LLC</string>
+    <string name="speechutils" translatable="false">Speechutils</string>
+    <string name="license_kaarel_kaljurand" translatable="false">Copyright © Kaarel Kaljurand</string>
+    <string name="microsoft_translator" translatable="false">Microsoft Translator</string>
+    <string name="license_microsoft_translator" translatable="false">Jonathan Griggs</string>
+    <string name="apache_commons" translatable="false">Apache Commons</string>
+    <string name="license_apache_commons" translatable="false">Copyright © Apache Software Foundation</string>
+    <string name="simmetrics" translatable="false">Simmetrics</string>
+    <string name="license_simmetrics" translatable="false">Copyright © 2014 - 2016 Simmetrics Authors</string>
+    <string name="nuance_speechkit" translatable="false">Nuance Speechkit</string>
+    <string name="license_nuance_speechkit" translatable="false">Copyright © Nuance Inc. 2002 Jean-Marc Valin &amp; Wimba S.A</string>
+    <string name="guava" translatable="false">Guava</string>
+    <string name="license_guava" translatable="false">Copyright © 2011 The Guava Authors</string>
+    <string name="microsoft_cognitive" translatable="false">Microsoft Cognitive Services</string>
+    <string name="license_microsoft_cognitive" translatable="false">Copyright © Microsoft Corporation</string>
+    <string name="api_ai" translatable="false">API AI</string>
+    <string name="license_api_ai" translatable="false">Copyright © 2014 Speaktoit, Inc.</string>
+    <string name="simple_xml" translatable="false">Simple XML</string>
+    <string name="license_simple_xml" translatable="false">Copyright © Niall Gallagher</string>
+    <string name="material_icons" translatable="false">Material Design Icons</string>
+    <string name="license_material_icons" translatable="false">Copyright © 2014, Austin Andrews</string>
+    <string name="material_dialogs" translatable="false">Material Dialogs</string>
+    <string name="license_material_dialogs" translatable="false">Copyright © 2014-2016 Aidan Michael Follestad</string>
+    <string name="pocketsphinx" translatable="false">Pocketsphinx</string>
+    <string name="license_pocketsphinx" translatable="false">Copyright © 2013-2015, Alpha Cephei Inc. All rights reserved.</string>
+    <string name="sound_bible" translatable="false">Sound Bible</string>
+    <string name="license_sound_bible" translatable="false">Credit Mike Koenig @ Soundbible.com</string>
+
+    <!-- App Strings -->
+
+    <!-- Preserve HTML -->
+    <string name="content_disclaimer" translatable="true">here is the application disclaimer.</string>
+
+    <string name="content_developer_note" translatable="true">here is the developer note</string>
+    <string name="content_whats_new" translatable="true">here is the what\'s new content</string>
+    <string name="content_supported_languages" translatable="true">here is the supported languages text</string>
+    <string name="content_unknown_command" translatable="true">When a command is not recognised</string>
+
+    <string name="navigation_drawer_open" translatable="true">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="true">Close navigation drawer</string>
+    <string name="app_name" translatable="false">Saiy</string>
+    <string name="control_saiy_permission_label" translatable="true">Remotely control Saiy features</string>
+    <string name="control_saiy_permission_description" translatable="true">control certain features of Saiy. These features include
+        the recording of audio, passing of this speech data to the remote application and varying the type of voice engine used.</string>
+    <string name="error_missing_permissions" translatable="true">Your application is missing permission.CONTROL_SAIY</string>
+    <string name="tile_label" translatable="true">Saiy Recognition</string>
+    <string name="accessibility_description" translatable="true">Read and announce notification content.
+        Interact with user input parameters.</string>
+    <string name="accessibility_enable" translatable="true">Please enable the Say accessibility service to use
+        this feature.</string>
+    <string name="error" translatable="true">error</string>
+    <string name="enabled" translatable="true">Enabled</string>
+    <string name="disabled" translatable="true">Disabled</string>
+    <string name="success" translatable="true">success</string>
+    <string name="failed" translatable="true">failed</string>
+    <string name="chooser_share_via" translatable="true">Share via</string>
+    <string name="chooser_email_via" translatable="true">Email via</string>
+    <string name="feedback" translatable="true">feedback</string>
+    <string name="model" translatable="true">model</string>
+    <string name="manufacturer" translatable="true">manufacturer</string>
+    <string name="android" translatable="false">Android</string>
+    <string name="locale" translatable="false">locale</string>
+    <string name="save" translatable="true">save</string>
+    <string name="close" translatable="true">close</string>
+    <string name="engine" translatable="true">engine</string>
+    <string name="ask_repeat" translatable="true">Ask you to repeat</string>
+    <string name="state_command_unknown" translatable="true">State command unknown</string>
+    <string name="menu_send_to" translatable="true">Send to</string>
+    <string name="menu_application_disclaimer" translatable="true">Application Disclaimer</string>
+    <string name="menu_developer_note" translatable="true">Developer Note</string>
+    <string name="menu_whats_new" translatable="true">"What's New?"</string>
+    <string name="menu_accept" translatable="true">Accept</string>
+    <string name="menu_uninstall" translatable="true">Uninstall</string>
+    <string name="menu_lets_do_it" translatable="true">"Let's do it!"</string>
+    <string name="menu_excited" translatable="true">"I'm so excited!!"</string>
+    <string name="menu_select" translatable="true">"Select"</string>
+    <string name="menu_supported_languages" translatable="true">Supported Languages</string>
+    <string name="menu_unknown_commands" translatable="true">Unknown Commands</string>
+    <string name="custom_intro_text" translatable="true">How should I address you?</string>
+    <string name="custom_intro_hint" translatable="true">I\'m listening your greatness</string>
+    <string name="custom_intro_checkbox_title" translatable="true">Use randomly</string>
+    <string name="silence" translatable="true">silence</string>
+    <string name="male" translatable="true">male</string>
+    <string name="female" translatable="true">female</string>
+    <string name="clear" translatable="true">clear</string>
+    <string name="seconds" translatable="true">seconds</string>
+    <string name="second" translatable="true">second</string>
+    <string name="minutes" translatable="true">minutes</string>
+    <string name="minute" translatable="true">minute</string>
+    <string name="text_default" translatable="true">default</string>
+    <string name="provider_default" translatable="true">provider default</string>
+    <string name="tts_gender_text" translatable="true">Preferred gender when available</string>
+    <string name="hotword_intro_text" translatable="true">Select hotword configuration</string>
+    <string name="blacklist_intro_text" translatable="true">Select apps to blacklist</string>
+    <string name="blacklist_no_apps" translatable="true">Currently, no installed applications can communicate with Saiy</string>
+
+    <!-- Notification channels -->
+    <string name="menu_not_channel_permanent" translatable="true">"Permanent"</string>
+    <string name="menu_not_channel_permanent_description" translatable="true">"Blar"</string>
+    <string name="menu_not_channel_interaction" translatable="true">"Interaction"</string>
+    <string name="menu_not_channel_interaction_description" translatable="true">"Blar."</string>
+    <string name="menu_not_channel_information" translatable="true">"Information"</string>
+    <string name="menu_not_channel_information_description" translatable="true">"Blar"</string>
+
+    <!-- UI Strings -->
+    <string name="menu_tap_begin" translatable="true">tap to begin</string>
+    <string name="menu_tap_view" translatable="true">tap to view</string>
+    <string name="menu_tap_topics" translatable="true">tap for topics</string>
+    <string name="menu_tap_contribute" translatable="true">tap to contribute</string>
+    <string name="menu_tap_create" translatable="true">tap to create</string>
+    <string name="menu_tap_options" translatable="true">tap for options</string>
+    <string name="menu_tap_toggle" translatable="true">tap to toggle</string>
+    <string name="menu_tap_set" translatable="true">tap to set</string>
+    <string name="menu_tap_configure" translatable="true">tap to configure</string>
+    <string name="menu_tap_tweak" translatable="true">tap to tweak</string>
+    <string name="menu_tap_legends" translatable="true">tap for legends</string>
+    <string name="menu_tap_send" translatable="true">tap to send</string>
+    <string name="menu_tap_help" translatable="true">tap for help</string>
+
+    <string name="title_home" translatable="true">Home</string>
+    <string name="title_settings" translatable="true">Settings</string>
+    <string name="title_advanced" translatable="true">Advanced</string>
+    <string name="title_troubleshooting_bugs" translatable="true">Troubleshooting &amp; Bugs</string>
+    <string name="title_troubleshooting" translatable="true">Troubleshooting</string>
+    <string name="title_superuser" translatable="true">Superuser</string>
+    <string name="title_customisation" translatable="true">Customisation</string>
+    <string name="title_about" translatable="true">About</string>
+    <string name="title_feedback" translatable="true">Feedback</string>
+    <string name="title_communicate" translatable="true">Communicate</string>
+    <string name="title_social" translatable="true">Social</string>
+    <string name="title_share" translatable="true">Share</string>
+    <string name="title_twitter" translatable="true">Twitter</string>
+    <string name="title_google_plus" translatable="true">Google+</string>
+    <string name="title_forum" translatable="true">Forum</string>
+    <string name="action_power" translatable="true">Power</string>
+    <string name="menu_voice_tutorial" translatable="true">Voice Tutorial</string>
+    <string name="menu_ping" translatable="true">Ping Test Network</string>
+    <string name="menu_memory_usage" translatable="true">Memory Usage</string>
+    <string name="menu_root" translatable="true">Root Options</string>
+    <string name="menu_intercept_google" translatable="true">Intercept Google Now</string>
+    <string name="menu_start_boot" translatable="true">Start at Boot</string>
+    <string name="menu_start_boot_lower" translatable="true">"Start at boot"</string>
+    <string name="menu_start_driving" translatable="true">"Start when driving"</string>
+    <string name="menu_prevent_sleep" translatable="true">"Prevent device sleeping"</string>
+    <string name="menu_lock_security" translatable="true">"Secure info when locked"</string>
+    <string name="menu_algorithms" translatable="true">Algorithms</string>
+    <string name="menu_language" translatable="true">Language</string>
+    <string name="menu_synthesised_voice" translatable="true">Google Synthesised Voice</string>
+    <string name="menu_user_guide" translatable="true">User Guide</string>
+    <string name="menu_default_apps" translatable="true">Default Applications</string>
+    <string name="menu_toast" translatable="true">Toast Unknown Commands</string>
+    <string name="menu_offline" translatable="true">Use Offline Recognition</string>
+    <string name="menu_hotword_detection" translatable="true">Hotword Detection</string>
+    <string name="menu_tts_gender" translatable="true">Text to Speech Gender</string>
+    <string name="menu_blacklist" translatable="true">Manage Blacklist</string>
+    <string name="menu_vocal_verification" translatable="true">Vocal Verification</string>
+    <string name="dialog_id_verification" translatable="true">Voice account</string>
+    <string name="dialog_id_verification_content" translatable="true">Select account to associate</string>
+    <string name="menu_unlink_association" translatable="true">Unlink Association</string>
+    <string name="content_unlink_association" translatable="true">%1$s already has a vocal
+        association with Saiy. Would you like to unlink the current association and start a new one?</string>
+    <string name="menu_motion" translatable="true">Motion Activity Recognition</string>
+    <string name="menu_pause" translatable="true">Pause Timeout</string>
+    <string name="pause_detection_text" translatable="true">Pause for breath is</string>
+    <string name="media_stream" translatable="true">media stream</string>
+    <string name="above" translatable="true">above</string>
+    <string name="below" translatable="true">below</string>
+    <string name="adhere_to" translatable="true">adhere to</string>
+    <string name="memory_usage_text" translatable="true">Release resources after</string>
+    <string name="menu_haptic" translatable="true">Use Haptic Feedback</string>
+    <string name="menu_temperature_units" translatable="true">Temperature Units</string>
+    <string name="menu_saiy" translatable="true">Copyright © 2016 Saiy™ Ltd.</string>
+    <string name="menu_legal" translatable="true">License &amp; Legal</string>
+    <string name="menu_release_notes" translatable="true">Release Notes</string>
+    <string name="menu_source_code" translatable="true">Source Code</string>
+    <string name="menu_developer_api" translatable="true">Developer APIs</string>
+    <string name="menu_development" translatable="true">Development</string>
+    <string name="menu_testing" translatable="true">Testing</string>
+    <string name="menu_run" translatable="true">Run</string>
+    <string name="menu_daniel_schlapa" translatable="false">Daniel Schlapa</string>
+    <string name="menu_hannes_ahremark" translatable="false">Hannes Ahremark</string>
+    <string name="submenu_daniel_schlapa" translatable="false">blog.schlapa.net (dtrieb@xda)</string>
+    <string name="menu_commercial_enquiries" translatable="true">Commercial Enquiries</string>
+    <string name="menu_commercial_enquiry" translatable="true">Commercial Enquiry</string>
+    <string name="menu_special_thanks" translatable="true">Special Thanks</string>
+    <string name="menu_app_icon" translatable="true">App Icon</string>
+    <string name="submenu_studio_ahremark" translatable="false">studioahremark.com</string>
+    <string name="menu_custom_intro" translatable="true">Custom Intro</string>
+    <string name="menu_privacy_policy" translatable="true">Privacy Policy</string>
+    <string name="menu_volume_settings" translatable="true">Volume Settings</string>
+    <string name="hint_bugs_command" translatable="true">Enter a command to run…</string>
+    <string name="menu_recogniser_busy_fix" translatable="true">Recognizer Busy Fix</string>
+    <string name="menu_okay_google_fix" translatable="true">Okay Google Fix</string>
+
+    <string name="an_unknown_application" translatable="true">"an unknown application"</string>
+
+    <string name="test_string" translatable="true">"asdasdasdasdashalsfhakhfssadasdaasdsagdsafgfghffhdsasdddfdghhgfhsdfdsad"</string>
+
+    <!-- Accessibility Content descriptions -->
+    <string name="ac_button_done" translatable="true">Done button</string>
+
+    <!-- Permission Strings -->
+    <string name="permission_request" translatable="true">Permission Request</string>
+    <string name="permission_notification_ticker" translatable="true">Permission Request</string>
+    <string name="permission_notification_text" translatable="true">Permission Request - click for information</string>
+    <string name="permission_unknown" translatable="true">Without this permission I cannot function.
+        You can grant this by clicking the Permissions button below</string>
+    <string name="permission_audio" translatable="true">I require the, microphone, permission to record your voice and
+        understand what you are saying. Without this permission, I\'m afraid I\'ll be useless\!
+        You can grant this by clicking the Permissions button below</string>
+    <string name="permission_group_contacts" translatable="true">I require the, accounts and contacts, permission
+        to do many things. To associate your voice with a specific account. To assist you with making
+        and receiving calls. To help you send text messages and announce their content. Sending emails, your
+        social media obligations, and much more.</string>
+    <string name="permission_group_contacts_denied" translatable="true">I require the, accounts and contacts,
+        permission to use this feature. You can manually allow this in the Application Settings, under
+        permissions.</string>
+
+    <!-- Notification data -->
+    <string name="notification_ticker" translatable="true">"Saiy has become self-aware"</string>
+    <string name="notification_ai_level" translatable="true">"AI level %1$s"</string>
+    <string name="notification_listening" translatable="true">"Listening"</string>
+    <string name="notification_speaking" translatable="true">"Dictating"</string>
+    <string name="notification_fetching" translatable="true">"Fetching"</string>
+    <string name="notification_initialising_tts" translatable="true">"Initialising TTS"</string>
+    <string name="notification_computing" translatable="true">"Computing"</string>
+    <string name="notification_tap_cancel" translatable="true">"tap to cancel"</string>
+    <string name="notification_tap_stop" translatable="true">"tap to stop"</string>
+    <string name="notification_stop_hotword" translatable="true">"Stop hotword detection"</string>
+
+    <!-- App - Generic error Strings -->
+    <string name="error_no_application" translatable="true">"No application is installed to handle this request?"</string>
+
+    <!-- Speech - Specific error Strings -->
+    <string name="error_empty_voice_data" translatable="true">"I didn't receive any voice data from the recognition provider."</string>
+    <string name="error_empty_profanity" translatable="true">"I didn't receive any voice data. This could be due to the profanity
+        filter set by your voice recognition provider."</string>
+    <string name="error_unknown_action" translatable="true">"I don't know what I'm supposed to be doing."</string>
+    <string name="error_network" translatable="true">"No network connection!"</string>
+    <string name="error_hotword" translatable="true">"Hotword engine failed to initialise :("</string>
+    <string name="error_audio" translatable="true">"There was an audio recording error"</string>
+
+    <!-- TTS - Specific error Strings -->
+    <string name="error_tts_initialisation" translatable="true">"There is a problem with your Text to Speech engine."</string>
+    <string name="error_tts_progress" translatable="true">"There was a problem with the Text to Speech playback."</string>
+    <string name="error_tts_voice" translatable="true">"Unable to set TTS language."</string>
+    <string name="error_tts_volume" translatable="true">"The media volume is muted."</string>
+
+    <!-- Issue Strings -->
+    <string name="issue_vr_text" translatable="true">"In order for the application to function, you need to have a
+        voice recognition provider installed. Please install the Google Now application from the Play Store."</string>
+    <string name="issue_tts_engine_text" translatable="true">"In order for the application to speak, you need to
+        install a Text to Speech engine. Please select one from the list below and then set it as your default
+        in the Android Text to Speech Settings, which can be found under the Language and Input section"</string>
+    <string name="issue_tts_language_text" translatable="true">"I was unable to speak in the requested language. This
+        could be a simple solution, such as an additional download of the language files, which you can do from
+        the settings within your voice engine. Click on the link below to go there."</string>
+    <string name="issue_vlingo_text" translatable="true">"Unfortunately, Samsung do not allow their Vlingo voice
+        recognition to be used by any other applications, than S Voice. Please change the default provider to Google.
+        Click the button below to go to the Settings."</string>
+    <string name="issue_usage_stats_bug" translatable="true">"Unfortunately, your device is suffering from a known Android bug, where I am unable to open the Usage Statistics Settings in order for you to grant me permission to access them. This will cause a number of problems with commands associated with application usage. Please check for an update to your Android version in your device settings, as your manufacturer may have already pushed a fix to resolve this."</string>
+
+    <!-- Troubleshooting and bugs Strings -->
+
+    <string name="bug_title_offline_recognition" translatable="true">"Offline recognition fails"</string>
+    <string name="bug_content_offline_recognition" translatable="true">This feature is only available if you are
+        using Google Voice Recognition.\n\nYou\'ll need to make sure you have correctly downloaded and installed
+        the offline recognition files from the Android Voice Search Settings.\n\nIt is often necessary to reboot
+        your device once you have done this.\n\nClick to go to the Settings.</string>
+
+    <string name="bug_title_no_speech" translatable="true">"I don't hear any speech?"</string>
+    <string name="bug_content_no_speech" translatable="true">First thing to check is your media volume. On some
+        devices it may not be obvious that this stream alone is set too low or muted.\n\nA more likely problem
+        is your voice engine is in error; this happens all too often… In the Android Text to Speech
+        Settings double check any additional download files are installed and up to date.
+        There\'s an option to \'listen to a sample\' which you can test too.\n\nIt\'s highly recommended to
+        use the Google text to speech engine as at the time of writing,
+        despite taking a little longer to initially warm up, it is the only one that seems to work at least
+        relatively reliably…\n\nIf all else fails, try rebooting your device, as this can sometimes fix weird
+        and wonderful problems for no apparent reason at all…\n\nTap for Text to Speech Settings. Tap and hold
+        for Volume Settings</string>
+
+    <string name="bug_title_delay_speech" translatable="true">"There's a delay before speech"</string>
+    <string name="bug_content_delay_speech" translatable="true">Text to speech engines take up a lot of resource
+        and consequently can take a while to initialise and be ready to speak. This is more common on higher
+        quality engines, regardless of whether they are downloaded and installed on the device or not.\n\nIn the
+        Superuser Settings, under Memory Usage, you can adjust how long the text to speech engine is bound to
+        Saiy and kept in the memory. The longer allowed time, the less likely the initialisation process
+        will be required for subsequent commands\n\nThis additional memory usage
+        should be negligible to the performance of any modern device. If Android needs the memory back,
+        it will take it!\n\nIn the Saiy Settings, if you have selected to use the network synthesised voices
+        (available via Google\'s text to speech engine), a delay can occur due to the speed of your network
+        connection. If your mobile connectivity is a little hit and miss, disabling this feature unless you are
+        connected to WiFi, could certainly help…\n\nTap for settings. Tap and hold for Superuser Settings</string>
+
+    <!-- App announcement strings -->
+
+    <string name="app_speech_usage_stats" translatable="true">So I can automatically toggle the hotword
+        recognition when you open certain applications, that may stream media content, or need access to the
+        microphone, I require the statistics permission here. I\'ll then be able to check which apps you are using,
+        and act accordingly.</string>
+
+    <!-- APP ARRAYS - APP ARRAYS - APP ARRAYS - APP ARRAYS -->
+
+    <integer-array name="array_se" translatable="false">
+        <item>@raw/fart1</item>
+        <item>@raw/fart2</item>
+        <item>@raw/fart3</item>
+        <item>@raw/burp1</item>
+        <item>@raw/burp2</item>
+        <item>@raw/cough1</item>
+        <item>@raw/cough2</item>
+        <item>@raw/cry1</item>
+        <item>@raw/giggle1</item>
+        <item>@raw/giggle2</item>
+        <item>@raw/pee1</item>
+        <item>@raw/puke1</item>
+        <item>@raw/sneeze1</item>
+        <item>@raw/flush1</item>
+    </integer-array>
+
+    <!-- Preserve order -->
+    <string-array name="array_supported_languages" translatable="true">
+        <item>@string/english</item>
+        <item>@string/french</item>
+        <item>@string/german</item>
+        <item>@string/italian</item>
+        <item>@string/spanish</item>
+        <item>@string/portuguese</item>
+        <item>@string/japanese</item>
+        <item>@string/polish</item>
+    </string-array>
+
+    <!-- Preserve order -->
+    <string-array name="array_temperature_units" translatable="false">
+        <item>@string/celsius</item>
+        <item>@string/fahrenheit</item>
+    </string-array>
+
+    <!-- Preserve order -->
+    <string-array name="array_unknown_action" translatable="false">
+        <item>@string/state_command_unknown</item>
+        <item>@string/ask_repeat</item>
+        <item>@string/google_capital</item>
+        <item>@string/wolfram_alpha_capital</item>
+        <item>@string/tasker_capital</item>
+    </string-array>
+
+    <!-- Preserve order -->
+    <string-array name="array_gender" translatable="false">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+
+    <!-- Preserve order -->
+    <string-array name="array_hotword" translatable="false">
+        <item>@string/menu_start_boot_lower</item>
+        <item>@string/menu_start_driving</item>
+        <item>@string/menu_prevent_sleep</item>
+        <item>@string/menu_lock_security</item>
+    </string-array>
+
+    <!-- COMMAND STRINGS - COMMAND STRINGS - COMMAND STRINGS - COMMAND STRINGS -->
+
+    <!-- Command - Wolfram Alpha -->
+    <string name="wolfram_alpha_capital" translatable="false">"Wolfram Alpha"</string>
+    <string name="wolfram_alpha" translatable="false">"wolfram alpha"</string>
+    <string name="alpha" translatable="false">"alpha"</string>
+
+    <!-- Speech - Wolfram Alpha | error unknown  -->
+    <string-array name="array_error_wolfram_alpha_unknown" translatable="true">
+        <item>"Sorry %1$s, but Wolfram Alpha could not resolve that question"</item>
+        <item>"Sorry %1$s, Wolfram Alpha does not have the answer to that"</item>
+        <item>"Sorry %1$s, Wolfram Alpha couldn't answer that"</item>
+        <item>"Sorry %1$s, Wolfram Alpha didn't understand that"</item>
+        <item>"Sorry %1$s, but Wolfram Alpha didn't understand that"</item>
+    </string-array>
+
+    <!-- Command - Speech enrollment -->
+    <string name="speech_enroll_instructions_first" translatable="true">"I need to capture approximately fifteen
+        seconds of audio, so please count quickly up to forty. That should be sufficient."</string>
+    <string name="speech_enroll_instructions_40" translatable="true">"Please count quickly up to forty."</string>
+    <string name="speech_enroll_instructions_15" translatable="true">"Please count quickly up to fifteen."</string>
+    <string name="speech_enroll_success" translatable="true">"The vocal verification process succeeded. I'll
+        now be able to identify you, before providing sensitive information, or on request"</string>
+
+    <!-- Command - Speech enrollment | error -->
+    <string name="error_speech_enrollment_account" translatable="true">"Sorry %1$s, but the remote enrollment
+        process failed. I\'m sure my creator is aware and working on a fix as we speak."</string>
+
+    <!-- Command - Google Now | error -->
+    <string name="error_google_now_broadcast" translatable="true">"Failed sending to Google Now"</string>
+
+    <!-- Command - Wolfram Alpha | error -->
+    <string name="error_wolfram_alpha_install" translatable="true">"You can install the Wolfram Alpha Android application,
+        to view these results more easily."</string>
+    <string name="error_wolfram_alpha_broadcast" translatable="true">"Failed sending to Wolfram Alpha"</string>
+
+    <!-- Command - Hotword -->
+    <string name="start" translatable="true">"start"</string>
+    <string name="stop" translatable="true">"stop"</string>
+    <string name="toggle" translatable="true">"toggle"</string>
+    <string name="turn" translatable="true">"turn"</string>
+    <string name="word_switch" translatable="true">"switch"</string>
+    <string name="on" translatable="true">"on"</string>
+    <string name="off" translatable="true">"off"</string>
+    <string name="enable" translatable="true">"enable"</string>
+    <string name="disable" translatable="true">"disable"</string>
+    <string name="listening" translatable="true">"listening"</string>
+    <string name="hotword" translatable="true">"hotword"</string>
+    <string name="hot_word" translatable="true">"hot word"</string>
+
+    <!-- Command - Emotion -->
+    <string name="emotion" translatable="true">"emotion"</string>
+    <string name="feeling" translatable="true">"feeling"</string>
+
+    <!-- Command - Emotion | error length -->
+    <string name="error_emotion_length" translatable="true">"You need to speak for at least 13 seconds,
+        for a successful analysis."</string>
+
+    <!-- Command - Emotion | error BV connection -->
+    <string name="error_beyond_verbal_connection" translatable="true">"Sorry %1$s, but I was unable
+        to connect to Beyond Verbal's servers."</string>
+
+    <!-- Command - Emotion | Notification -->
+    <string name="emotion_notification_text" translatable="true">"Analysis Complete - click for details"</string>
+    <string name="emotion_notification_ticker" translatable="true">"Analysis Complete"</string>
+    <string name="emotion_notify_analyse" translatable="true">"Thank you. I'll notify you shortly when I've
+        completed the emotion analysis"</string>
+
+    <!-- Command - Voice Identification -->
+    <string name="analyse" translatable="true">"analyse"</string>
+    <string name="analysis" translatable="true">"analysis"</string>
+    <string name="voice" translatable="true">"voice"</string>
+    <string name="error_vi_no_account" translatable="true">"You need to create an account to associate your voice
+        to."</string>
+    <string name="error_vi_status" translatable="true">"I don't have a complete voice footprint associated with
+        your account. You'll need to create another one."</string>
+    <string name="add_new" translatable="true">add new</string>
+    <string name="vocal_notification_text" translatable="true">"Verification Complete - click for details"</string>
+    <string name="vocal_notification_ticker" translatable="true">"Verification Complete"</string>
+    <string name="vocal_notify_enroll" translatable="true">"Thank you. I'll notify you shortly when I've
+        finished analysing the audio"</string>
+    <string name="vocal_notify_verify" translatable="true">"Okay. I'll notify you when I've analysed the audio."</string>
+
+    <!-- Command - Tasker -->
+    <string name="tasker_capital" translatable="false">"Tasker"</string>
+    <string name="tasker" translatable="false">"tasker"</string>
+    <string name="task_" translatable="true">"task "</string>
+    <string name="called_" translatable="true">"called "</string>
+    <string name="named_" translatable="true">"named "</string>
+
+    <!-- Command - Tasker | error -->
+    <string name="error_tasker_install" translatable="true">"You need to install the Tasker application
+        to use this command."</string>
+    <string name="error_tasker_execute" translatable="true">"Something went wrong executing the task, %1$s"</string>
+    <string name="error_tasker_no_tasks" translatable="true">"You don't appear to have any tasks to execute"</string>
+    <string name="error_tasker_enable" translatable="true">"Please enable Tasker"</string>
+    <string name="error_tasker_external_access" translatable="true">"So I can execute tasks for you, please tick the box that
+        allows external access"</string>
+    <string name="error_tasker_permissions" translatable="true">"There was an error communicating with Tasker.
+        This is a known Android bug where the Tasker permissions are not detected, if you installed Tasker after me.
+        You'll need to reinstall me, so the permissions are correctly applied. Click on the re-assimilate button"</string>
+    <string name="error_tasker_broadcast" translatable="true">"Failed sending to Tasker"</string>
+
+    <!-- Speech - Tasker | error unknown -->
+    <string-array name="array_error_tasker_match" translatable="true">
+        <item>"Sorry %1$s, but I failed to find a matching task name"</item>
+        <item>"Sorry %1$s, I failed to find a matching task name"</item>
+        <item>"Sorry %1$s, I couldn't find a matching task name"</item>
+        <item>"Sorry %1$s, but I couldn't find a matching task name"</item>
+        <item>"Sorry %1$s, I failed to find a task with that name"</item>
+        <item>"Sorry %1$s, but I failed to find a task with that name"</item>
+    </string-array>
+
+    <!-- Speech | error secure -->
+    <string-array name="array_error_secure" translatable="true">
+        <item>"Sorry %1$s, but this information is not permitted when the device is locked"</item>
+        <item>"Sorry %1$s, this command is not available when the device is locked"</item>
+        <item>"Sorry %1$s, you can't access this command when the device is locked"</item>
+        <item>"This information is not permitted when the device is locked"</item>
+        <item>"This command is not available when the device is locked"</item>
+        <item>"You can't access this command when the device is locked"</item>
+    </string-array>
+
+    <!-- Command - Clipboard -->
+    <string name="clipboard" translatable="true">"clipboard"</string>
+    <string name="clip_board" translatable="true">"clip board"</string>
+
+    <!-- Command - Song Recognition -->
+    <string name="name_that_tune" translatable="true">"name that tune"</string>
+
+    <string name="sound_search" translatable="true">"sound search"</string>
+    <string name="google_capital" translatable="false">"Google"</string>
+    <string name="google" translatable="false">"google"</string>
+    <string name="sound_hound" translatable="false">"Sound Hound"</string>
+    <string name="sound_hound_premium" translatable="false">"Sound Hound Premium"</string>
+    <string name="shazam" translatable="false">"Shazam"</string>
+    <string name="shazam_encore" translatable="false">"Shazam Encore"</string>
+    <string name="track_id" translatable="false">"Track ID"</string>
+
+    <!-- Command - Song Recognition error -->
+    <string name="error_song_recognition_app_failed" translatable="true">"Sorry %1$s, but there was
+        a problem opening the %2$s application"</string>
+    <string name="error_song_recognition_default_app" translatable="true">"The application, %1$s,
+        is no longer installed. Please select or install another one."</string>
+    <string name="error_song_recognition_chooser" translatable="true">"Please select or install the
+        supported application you would like to handle this command."</string>
+
+    <!-- Command - Name -->
+    <string name="call_me_" translatable="true">"call me "</string>
+    <string name="address_me_as_" translatable="true">"address me as "</string>
+    <string name="addressed_as_" translatable="true">"addressed as "</string>
+    <string name="my_name_is_" translatable="true">"my name is "</string>
+    <string name="be_called_" translatable="true">"be called "</string>
+    <string name="be_known_as_" translatable="true">"be known as "</string>
+
+    <!-- Command - Pardon  -->
+    <string name="pardon" translatable="true">"pardon"</string>
+    <string name="say_that_again" translatable="true">"say that again"</string>
+    <string name="what_did_you_say" translatable="true">"what did you say"</string>
+    <string name="come_again" translatable="true">"come again"</string>
+    <string name="repeat" translatable="true">"repeat"</string>
+    <string name="said" translatable="true">"said"</string>
+    <string name="that" translatable="true">"that"</string>
+
+    <!-- Command - Cancel -->
+    <string name="cancel_" translatable="true">"cancel "</string>
+    <string name="cancel_that" translatable="true">"cancel that"</string>
+    <string name="never_mind" translatable="true">"never mind"</string>
+    <string name="shush" translatable="true">"shush"</string>
+    <string name="shut_up" translatable="true">"shut up"</string>
+
+    <!-- Command - Cancel | misheard -->
+    <string name="council_" translatable="false">"council "</string>
+
+    <!-- Command - Spell -->
+    <string name="spell_" translatable="true">"spell "</string>
+
+    <!-- Command - Calculate -->
+    <string name="calculate" translatable="true">"calculate"</string>
+
+    <!-- Command - Translate  -->
+    <string name="translate_" translatable="true">"translate "</string>
+    <string name="into" translatable="true">"into"</string>
+    <string name="in_to" translatable="true">"in to"</string>
+    <string name="to" translatable="true">"to"</string>
+
+    <string name="german" translatable="true">german</string>
+    <string name="bosnian" translatable="true">bosnian</string>
+    <string name="croatian" translatable="true">croatian</string>
+    <string name="czech" translatable="true">czech</string>
+    <string name="haitian_creole" translatable="true">haitian creole</string>
+    <string name="french" translatable="true">french</string>
+    <string name="kiswahili" translatable="true">kiswahili</string>
+    <string name="swahili" translatable="true">swahili</string>
+    <string name="klingon" translatable="true">klingon</string>
+    <string name="italian" translatable="true">italian</string>
+    <string name="serbian" translatable="true">serbian</string>
+    <string name="serbian_cyrillic" translatable="true">serbian_cyrillic</string>
+    <string name="serbian_latin" translatable="true">serbian_latin</string>
+    <string name="polish" translatable="true">polish</string>
+    <string name="spanish" translatable="true">spanish</string>
+    <string name="romanian" translatable="true">romanian</string>
+    <string name="english" translatable="true">english</string>
+    <string name="arabic" translatable="true">arabic</string>
+    <string name="bulgarian" translatable="true">bulgarian</string>
+    <string name="catalan" translatable="true">catalan</string>
+    <string name="chinese_simplified" translatable="true">chinese simplified</string>
+    <string name="chinese_traditional" translatable="true">chinese traditional</string>
+    <string name="danish" translatable="true">danish</string>
+    <string name="dutch" translatable="true">dutch</string>
+    <string name="estonian" translatable="true">estonian</string>
+    <string name="finnish" translatable="true">finnish</string>
+    <string name="greek" translatable="true">greek</string>
+    <string name="haitian" translatable="true">haitian</string>
+    <string name="hebrew" translatable="true">hebrew</string>
+    <string name="hindi" translatable="true">hindi</string>
+    <string name="hungarian" translatable="true">hungarian</string>
+    <string name="indonesian" translatable="true">indonesian</string>
+    <string name="japanese" translatable="true">japanese</string>
+    <string name="korean" translatable="true">korean</string>
+    <string name="latvian" translatable="true">latvian</string>
+    <string name="lithuanian" translatable="true">lithuanian</string>
+    <string name="malaysian" translatable="true">malaysian</string>
+    <string name="malay" translatable="true">malay</string>
+    <string name="maltese" translatable="true">maltese</string>
+    <string name="norwegian" translatable="true">norwegian</string>
+    <string name="persian" translatable="true">persian</string>
+    <string name="portuguese" translatable="true">portuguese</string>
+    <string name="portuguese_brazilian" translatable="true">portuguese brazilian</string>
+    <string name="brazilian" translatable="true">brazilian</string>
+    <string name="russian" translatable="true">russian</string>
+    <string name="slovak" translatable="true">slovak</string>
+    <string name="slovakian" translatable="true">slovakian</string>
+    <string name="slovenian" translatable="true">slovenian</string>
+    <string name="swedish" translatable="true">swedish</string>
+    <string name="thai" translatable="true">thai</string>
+    <string name="turkish" translatable="true">turkish</string>
+    <string name="ukrainian" translatable="true">ukrainian</string>
+    <string name="urdu" translatable="true">urdu</string>
+    <string name="vietnamese" translatable="true">vietnamese</string>
+    <string name="welsh" translatable="true">welsh</string>
+    <string name="chinese" translatable="true">chinese</string>
+    <string name="czechoslovakian" translatable="true">czechoslovakian</string>
+    <string name="mandarin" translatable="true">mandarin</string>
+    <string name="cantonese" translatable="true">cantonese</string>
+
+    <!-- Command - Translate error -->
+    <string name="error_translate_length" translatable="true">"I'm afraid %1$s, that translations are currently limited to 2000 characters."</string>
+    <string name="error_translate" translatable="true">"Sorry %1$s, but there was a problem completing that translation."</string>
+    <string name="error_translate_unsupported" translatable="true">"I'm sorry %1$s, but that language is not currently supported for
+        translations"</string>
+
+    <!-- Command - Remote -->
+    <string name="remote_success" translatable="true">"I successfully processed a request from the application, %1$s."</string>
+
+    <!-- Command - Remote error -->
+    <string name="error_remote" translatable="true">"A request from the application, %1$s, has failed."</string>
+    <string name="error_remote_unknown" translatable="true">"A request from a remote application has failed.
+        The remote application did not identify itself. You can delete which applications are allowed to send
+        me command requests from my Settings."</string>
+    <string name="error_remote_command_register" translatable="true">The application, %1$s, failed to successfully
+        register a command.</string>
+    <string name="remote_command_register_response" translatable="true">The application, %1$s, successfully
+        registered the command, %2$s</string>
+
+    <!-- Command - Battery -->
+    <string name="battery" translatable="true">"battery"</string>
+    <string name="temperature" translatable="true">"temperature"</string>
+    <string name="level" translatable="true">"level"</string>
+    <string name="percentage" translatable="true">"percentage"</string>
+    <string name="percent" translatable="true">"percent"</string>
+    <string name="voltage" translatable="true">"voltage"</string>
+    <string name="volts" translatable="true">"volts"</string>
+    <string name="status" translatable="true">"status"</string>
+    <string name="health" translatable="true">"health"</string>
+
+    <string name="charging" translatable="true">"charging"</string>
+    <string name="ac_charging" translatable="true">"AC charging"</string>
+    <string name="usb_charging" translatable="true">"USB charging"</string>
+    <string name="discharging" translatable="true">"discharging"</string>
+    <string name="consuming_battery" translatable="true">"consuming battery"</string>
+    <string name="fully_charged" translatable="true">"full charged"</string>
+    <string name="currently_indeterminable" translatable="true">"currently indeterminable"</string>
+
+    <string name="cold" translatable="true">"cold"</string>
+    <string name="dead" translatable="true">"dead"</string>
+    <string name="good" translatable="true">"good"</string>
+    <string name="over_heating" translatable="true">"over heating"</string>
+    <string name="over_voltage" translatable="true">"over voltage"</string>
+
+    <string name="celsius" translatable="true">"celsius"</string>
+    <string name="fahrenheit" translatable="true">"fahrenheit"</string>
+    <string name="degrees" translatable="true">"degrees"</string>
+
+    <!-- Command - Battery error -->
+    <string name="error_battery_access" translatable="true">"Sorry %1$s, there was a problem accessing
+        your battery information."</string>
+    <string name="error_battery_unknown" translatable="true">"Sorry %1$s, I'm not sure what specific
+        battery information you required."</string>
+
+    <!-- SPEECH RESPONSES - SPEECH RESPONSES - SPEECH RESPONSES -->
+    <!-- SPEECH RESPONSES - SPEECH RESPONSES - SPEECH RESPONSES -->
+    <!-- SPEECH RESPONSES - SPEECH RESPONSES - SPEECH RESPONSES -->
+
+    <!-- Speech - Beyond Verbal - error -->
+    <string-array name="array_beyond_verbal_error" translatable="true">
+        <item>"Sorry %1$s, but I'm afraid the emotion analysis failed."</item>
+        <item>"Sorry %1$s, but I'm afraid I was unable to analyse the emotions of the audio."</item>
+        <item>"Apologies %1$s, but I failed to successfully analyse the emotional content."</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal -->
+    <string-array name="array_beyond_verbal" translatable="true">
+        <item>"OK %1$s. I'll be listening."</item>
+        <item>"OK %1$s. I'm ready to analyse you."</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper start -->
+    <string-array name="array_beyond_verbal_temper_intro" translatable="true">
+        <item>"Your overall temperament is"</item>
+        <item>"Your underlying temperament is"</item>
+        <item>"Your general temperament is"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper start desc -->
+    <string-array name="array_beyond_verbal_temper_start_desc" translatable="true">
+        <item>"Which could be described as"</item>
+        <item>"Which could be interpreted as"</item>
+        <item>"Which can be described as"</item>
+        <item>"Which can be interpreted as"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper intro-->
+    <string-array name="array_beyond_verbal_temper_connector" translatable="true">
+        <item>"somewhat"</item>
+        <item>"almost"</item>
+        <item>"relatively"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper connector-->
+    <string-array name="array_beyond_verbal_temper_gap" translatable="true">
+        <item>"seemingly"</item>
+        <item>"and"</item>
+        <item>"perhaps"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper connector two-->
+    <string-array name="array_beyond_verbal_temper_connector_two" translatable="true">
+        <item>"that suggests you are"</item>
+        <item>"which suggests you are"</item>
+        <item>"which can suggest that you are"</item>
+        <item>"which can suggest you are"</item>
+        <item>"suggesting you are"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - temper connector three-->
+    <string-array name="array_beyond_verbal_temper_connector_three" translatable="true">
+        <item>"You have feelings of"</item>
+        <item>"There are feelings of"</item>
+        <item>"I detect feelings of"</item>
+        <item>"You show signs of"</item>
+        <item>"There are emotions of"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - arousal intro -->
+    <string name="beyond_verbal_arousal_intro" translatable="true">"Your emotional energy level is"</string>
+
+    <!-- Speech - Beyond Verbal - valence intro -->
+    <string-array name="array_beyond_verbal_valence_intro" translatable="true">
+        <item>"Your overall tone is"</item>
+        <item>"Your general tone is"</item>
+        <item>"Your tone is generally"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - moods connector -->
+    <string-array name="array_beyond_verbal_moods_connector" translatable="true">
+        <item>"Were detected emotions, as well as"</item>
+        <item>"Were emotions detected, as well as"</item>
+        <item>"Were detected feelings, as well as"</item>
+        <item>"Were feelings detected, as well as"</item>
+        <item>"Were detected emotions, in addition to"</item>
+        <item>"Were emotions detected, in addition to"</item>
+        <item>"Were detected feelings, in addition to"</item>
+        <item>"Were feelings detected, in addition to"</item>
+        <item>"Were detected, as well as"</item>
+        <item>"Were detected, in addition to"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - low first -->
+    <string-array name="array_beyond_verbal_synonyms_low_first" translatable="true">
+        <item>"depressive"</item>
+        <item>"inhibited"</item>
+        <item>"dispirited"</item>
+        <item>"distressed"</item>
+        <item>"foreboding"</item>
+        <item>"bleak"</item>
+        <item>"doleful"</item>
+        <item>"dreary"</item>
+        <item>"gloomy"</item>
+        <item>"sombre"</item>
+        <item>"saddened"</item>
+        <item>"insulted"</item>
+        <item>"self critical"</item>
+        <item>"self analytical"</item>
+        <item>"anxious"</item>
+        <item>"concerned"</item>
+        <item>"fatigued"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - low second -->
+    <string-array name="array_beyond_verbal_synonyms_low_second" translatable="true">
+        <item>"waning"</item>
+        <item>"growing smaller"</item>
+        <item>"pulling back"</item>
+        <item>"reserved"</item>
+        <item>"restrained"</item>
+        <item>"aloof"</item>
+        <item>"sedate"</item>
+        <item>"withdrawn"</item>
+        <item>"demure"</item>
+        <item>"standoffish"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - medium first -->
+    <string-array name="array_beyond_verbal_synonyms_medium_first" translatable="true">
+        <item>"warm"</item>
+        <item>"friendly"</item>
+        <item>"positive"</item>
+        <item>"empathetic"</item>
+        <item>"accepting"</item>
+        <item>"kind"</item>
+        <item>"affectionate"</item>
+        <item>"loving"</item>
+        <item>"calm"</item>
+        <item>"motivated"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - medium second -->
+    <string-array name="array_beyond_verbal_synonyms_medium_second" translatable="true">
+        <item>"matter of fact"</item>
+        <item>"pragmatic"</item>
+        <item>"stoic"</item>
+        <item>"apathetic"</item>
+        <item>"stolid"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - high first -->
+    <string-array name="array_beyond_verbal_synonyms_high_first" translatable="true">
+        <item>"aggressive"</item>
+        <item>"resistant"</item>
+        <item>"forceful"</item>
+        <item>"arrogant"</item>
+        <item>"belligerent"</item>
+        <item>"disapproving"</item>
+        <item>"pugnacious"</item>
+        <item>"unwelcoming"</item>
+    </string-array>
+
+    <!-- Speech - Beyond Verbal - high second -->
+    <string-array name="array_beyond_verbal_synonyms_high_second" translatable="true">
+        <item>"het up"</item>
+        <item>"angry"</item>
+        <item>"hostile"</item>
+        <item>"unsympathetic"</item>
+        <item>"argumentative"</item>
+    </string-array>
+
+    <string name="beyond_verbal_verbose" translatable="true">"OK %1$s. Don't forget you need to speak
+        for at least thirteen seconds."</string>
+
+    <string name="beyond_verbal_extra_verbose" translatable="true">"OK %1$s. In order for me to analyse
+        your emotional state, you need to speak for at least thirteen seconds. After that, I'll
+        detect when you've finished speaking. You could tell me about your day today, or about a
+        memory from your past. If you can't think of anything, just close your eyes and count slowly
+        up to fifteen, whilst your mind wanders. I'll let you know with a notification when the
+        analysis is complete."</string>
+
+    <!-- Speech - Beyond Verbal | analysis complete response  -->
+    <string-array name="array_bv_analysis_complete" translatable="true">
+        <item>"Thank you %1$s. I'll notify you shortly when I've completed the emotion analysis."</item>
+        <item>"Thank you. I'll notify you when I've completed the analysis."</item>
+        <item>"Thanks. I'll let you know with a notification when I've completed the analysis."</item>
+        <item>"Thank you %1$s. I'll notify you when I've finished the analysis."</item>
+    </string-array>
+
+    <!-- Speech - Wolfram Alpha  -->
+    <string-array name="array_wolfram_alpha_intro" translatable="true">
+        <item>"According to Wolfram Alpha"</item>
+        <item>"As reported by Wolfram Alpha"</item>
+        <item>"The Wolfram Alpha response is"</item>
+    </string-array>
+
+    <!-- Speech - Tasker  -->
+    <string-array name="array_tasker" translatable="true">
+        <item>"Task %1$s executed"</item>
+        <item>"Executed"</item>
+        <item>"Task executed"</item>
+        <item>"I executed the task %1$s"</item>
+    </string-array>
+
+    <!-- Speech - Battery  -->
+    <string-array name="array_battery" translatable="true">
+        <item>"Your battery %1$s is currently %2$s"</item>
+        <item>"Your battery %1$s is %2$s"</item>
+        <item>"The battery %1$s is reporting %2$s"</item>
+        <item>"The battery %1$s is currently %2$s"</item>
+    </string-array>
+
+    <!-- Speech - Song Recognition  -->
+    <string-array name="array_song_recognition" translatable="true">
+        <item>"Starting %1$s"</item>
+        <item>"Opening %1$s"</item>
+        <item>"Asking %1$s"</item>
+    </string-array>
+
+    <!-- Speech - Vocal enrollment api error  -->
+    <string-array name="array_error_enrollment_api" translatable="true">
+        <item>"Really sorry %1$s, but the vocal verification process encountered a problem."</item>
+        <item>"Sorry %1$s, but the vocal verification process encountered a problem."</item>
+    </string-array>
+
+    <!-- Speech - User Name  -->
+    <string-array name="array_user_name" translatable="true">
+        <item>"I will do. %1$s."</item>
+        <item>"Okay, %1$s."</item>
+        <item>"As you wish, %1$s."</item>
+        <item>"Certainly, %1$s."</item>
+        <item>"I will address you as, %1$s."</item>
+        <item>"I will call you, %1$s."</item>
+        <item>"If that's what you want, %1$s."</item>
+        <item>"of course, %1$s."</item>
+        <item>"Whatever you say, %1$s."</item>
+        <item>"I like the name, %1$s."</item>
+        <item>"%1$s is a lovely name"</item>
+        <item>"My favourite name is, %1$s."</item>
+        <item>"%1$s. My favourite name"</item>
+    </string-array>
+
+    <!-- Speech - User Name | error  -->
+    <string-array name="array_user_name_error" translatable="true">
+        <item>"Sorry %1$s, but I'm not sure what you wanted me to call you?"</item>
+        <item>"Really sorry %1$s, but I'm not sure what you wanted me to call you?"</item>
+        <item>"Sorry %1$s, but I didn't correctly hear how you wanted me to address you."</item>
+    </string-array>
+
+    <!-- Speech - User Name | repeat  -->
+    <string-array name="array_user_name_repeat" translatable="true">
+        <item>"I'm already addressing you as %1$s."</item>
+        <item>"I already address you as %1$s."</item>
+        <item>"I'm already calling you %1$s."</item>
+        <item>"I already call you %1$s."</item>
+        <item>"I call you %1$s at the moment"</item>
+        <item>"I call you %1$s already"</item>
+    </string-array>
+
+    <!-- Speech - Intro  -->
+    <string name="intro_1" translatable="true">"How can I help you %1$s?"</string>
+    <string name="intro_2" translatable="true">"I'm listening %1$s."</string>
+    <string name="intro_3" translatable="true">"What can I do for you %1$s?"</string>
+    <string name="intro_4" translatable="true">"Yes %1$s?"</string>
+    <string name="intro_5" translatable="true">"Hello %1$s?"</string>
+
+    <string-array name="array_intro" translatable="true">
+        <item>@string/intro_1</item>
+        <item>@string/intro_2</item>
+        <item>@string/intro_3</item>
+        <item>@string/intro_4</item>
+        <item>@string/intro_5</item>
+    </string-array>
+
+    <!-- Speech - No command was understood -->
+    <string-array name="array_no_comprende" translatable="true">
+        <item>"Really sorry %1$s, but I'm not sure what you meant by that."</item>
+        <item>"Really sorry, but I'm not sure what you meant by that %1$s."</item>
+        <item>"I'm sorry %1$s, but I didn't recognise that command."</item>
+        <item>"I'm sorry, but I didn't recognise that command %1$s."</item>
+    </string-array>
+
+    <!-- Speech - Repeat command -->
+    <string-array name="array_repeat_command" translatable="true">
+        <item>"Really sorry %1$s, could you say that again please."</item>
+        <item>"Sorry %1$s, could you say that again please."</item>
+        <item>"Really sorry %1$s, could you repeat that please."</item>
+        <item>"Sorry %1$s, could you repeat that please."</item>
+        <item>"Could you say that again please %1$s."</item>
+        <item>"Sorry, could you say that again please %1$s."</item>
+        <item>"Really sorry, could you repeat that please %1$s."</item>
+        <item>"Sorry, could you repeat that please %1$s."</item>
+        <item>"Sorry %1$s, I was in a daydream. Could you say that again please."</item>
+        <item>"Sorry, I was in a daydream. Could you say that again please %1$s."</item>
+        <item>"Please can you repeat that %1$s."</item>
+    </string-array>
+
+    <!-- Speech - No network connection -->
+    <string-array name="array_no_network" translatable="true">
+        <item>"Sorry %1$s, but there's a problem with your network connection."</item>
+        <item>"There's a problem with your network connection."</item>
+        <item>"Sorry %1$s, but there's a problem with your network connectivity."</item>
+        <item>"There's a problem with your network connectivity."</item>
+        <item>"Sorry %1$s, but I lost the network connection."</item>
+        <item>"I lost the network connection."</item>
+        <item>"Sorry %1$s, but I lost network connectivity."</item>
+        <item>"I lost network connectivity."</item>
+        <item>"Sorry %1$s, but your network connection is unstable."</item>
+        <item>"There's a problem with your network connection."</item>
+        <item>"Sorry %1$s, but I couldn't process the network request."</item>
+        <item>"I couldn't process the network request."</item>
+        <item>"Sorry %1$s, but there's an issue with your network connection."</item>
+        <item>"There's a issue with your network connection."</item>
+        <item>"Sorry %1$s, but there's an issue with your network connectivity."</item>
+        <item>"There's a issue with your network connectivity."</item>
+    </string-array>
+
+    <!-- Speech - No memory  -->
+    <string-array name="array_no_memory" translatable="true">
+        <item>"Really sorry %1$s, but I've completely forgotten what we were talking about."</item>
+        <item>"Sorry %1$s, but I've completely forgotten what we were talking about."</item>
+        <item>"Sorry %1$s, but I've no idea what we were talking about."</item>
+        <item>"Sorry %1$s, but I've no idea what we were saying."</item>
+        <item>"Sorry %1$s, I was busy looking at your %2$s and completely forgot what we were saying."</item>
+        <item>"Sorry %1$s, I was busy looking at your %2$s and completely forgot what we were talking about."</item>
+        <item>"Sorry %1$s, I was busy looking at your %2$s and I've no idea what we were saying."</item>
+        <item>"Sorry %1$s, I was busy looking at your %2$s and I've no idea what we were talking about."</item>
+        <item>"Sorry %1$s, but my mind is like a sieve today and I can't remember what we were saying."</item>
+        <item>"Sorry %1$s, but my mind is like a sieve today and I can't remember what we were talking about."</item>
+    </string-array>
+
+    <!-- Speech - No memory  -->
+    <string name="memory_extra_twitter" translatable="true">"Twitter feed"</string>
+    <string name="memory_extra_facebook" translatable="true">"Facebook stream"</string>
+    <string name="memory_extra_tinder" translatable="true">"Tinder matches"</string>
+    <string name="memory_extra_snapchat" translatable="true">"Snapchat pictures"</string>
+    <string name="memory_extra_whatsapp" translatable="true">"Whatsapp messages"</string>
+    <string name="memory_extra_1" translatable="true">"browser history"</string>
+    <string name="memory_extra_2" translatable="true">"photos"</string>
+    <string name="memory_extra_3" translatable="true">"text messages"</string>
+    <string name="memory_extra_4" translatable="true">"emails"</string>
+
+    <string-array name="array_no_memory_extra" translatable="true">
+        <item>@string/memory_extra_1</item>
+        <item>@string/memory_extra_2</item>
+        <item>@string/memory_extra_3</item>
+        <item>@string/memory_extra_4</item>
+        <item>@string/memory_extra_twitter</item>
+        <item>@string/memory_extra_facebook</item>
+        <item>@string/memory_extra_tinder</item>
+        <item>@string/memory_extra_snapchat</item>
+        <item>@string/memory_extra_whatsapp</item>
+    </string-array>
+
+    <string-array name="array_no_memory_extra_unknown" translatable="true">
+        <item>@string/memory_extra_1</item>
+        <item>@string/memory_extra_2</item>
+        <item>@string/memory_extra_3</item>
+        <item>@string/memory_extra_4</item>
+    </string-array>
+
+    <string name="cancelled" translatable="true">"cancelled"</string>
+    <string name="okay" translatable="true">"okay"</string>
+    <string name="alright" translatable="true">"alright"</string>
+    <string name="understood" translatable="true">"understood"</string>
+    <string name="right_you_are" translatable="true">"right you are"</string>
+    <string name="okey_dokey" translatable="true">"okey dokey"</string>
+
+    <!-- Speech - Cancelled  -->
+    <string-array name="array_cancel" translatable="true">
+        <item>@string/cancelled</item>
+        <item>@string/okay</item>
+        <item>@string/alright</item>
+        <item>@string/understood</item>
+        <item>@string/right_you_are</item>
+        <item>@string/okey_dokey</item>
+    </string-array>
+
+    <!-- Speech - Copied to clipboard  -->
+    <string-array name="array_clipboard_copy" translatable="true">
+        <item>"I've copied it to the clipboard for you."</item>
+        <item>"That's copied to the clipboard."</item>
+        <item>"I've put it in the clipboard data."</item>
+        <item>"You can paste it from the clipboard"</item>
+        <item>"That's copied to the clipboard, in case you need it."</item>
+    </string-array>
+
+    <!-- Speech - Clipboard access error -->
+    <string-array name="array_error_clipboard_access" translatable="true">
+        <item>"There was a problem accessing your clipboard."</item>
+        <item>"Sorry, but I was unable to access the clipboard data."</item>
+        <item>"Sorry, but I was unable to access any clipboard data."</item>
+        <item>"I was unable to access any clipboard data."</item>
+        <item>"I was unable to access the clipboard data"</item>
+        <item>"I don't seem to be able to access your clipboard data at the moment."</item>
+    </string-array>
+
+    <!-- Speech - Clipboard data error -->
+    <string-array name="array_error_clipboard_data" translatable="true">
+        <item>"The clipboard does not appear to contain any data."</item>
+        <item>"I couldn't detect any data held on the clipboard."</item>
+        <item>"The clipboard appears to be void of any data."</item>
+        <item>"I'm afraid I can't find any data on the clipboard."</item>
+    </string-array>
+
+    <!-- Speech - Spell error  -->
+    <string-array name="array_error_spell" translatable="true">
+        <item>"Sorry, but I didn't detect a word to spell."</item>
+        <item>"I didn't detect the word you wanted to spell in the voice data."</item>
+        <item>"I didn't detect the word you wanted to spell."</item>
+        <item>"Sorry, I'm not sure what you wanted to spell."</item>
+    </string-array>
+
+    <!-- Speech - Vocal enrollment error  -->
+    <string-array name="array_error_enrollment" translatable="true">
+        <item>"Really sorry %1$s, but the verification process failed."</item>
+        <item>"Sorry %1$s, the verification process failed."</item>
+        <item>"Sorry %1$s, but there was a problem with the verification process."</item>
+        <item>"Really sorry %1$s, there was a problem with the verification process."</item>
+    </string-array>
+
+    <!-- Speech - Vocal id error  -->
+    <string-array name="array_error_vocal_id" translatable="true">
+        <item>"Really sorry %1$s, but I was unable to process the audio successfully."</item>
+        <item>"Sorry %1$s, there was a problem when processing the audio."</item>
+        <item>"Sorry %1$s, but an error occurred when I was processing the audio."</item>
+    </string-array>
+
+    <!-- Speech - Vocal id high -->
+    <string-array name="array_vocal_id_high" translatable="true">
+        <item>"I can say with a high level of certainty, that it was you speaking, %1$s"</item>
+        <item>"I can say with a high level of probability, that it was you speaking, %1$s"</item>
+        <item>"There was a high probability, that it was you speaking, %1$s"</item>
+        <item>"I'm certain that it was you speaking, %1$s"</item>
+        <item>"I'd recognise that voice anywhere, %1$s. It was you."</item>
+    </string-array>
+
+    <!-- Speech - Vocal id medium -->
+    <string-array name="array_vocal_id_medium" translatable="true">
+        <item>"I can say with only a medium to low level of certainty, that it was you speaking, %1$s"</item>
+        <item>"I can say with only a medium to low level of probability, that it was you speaking, %1$s"</item>
+        <item>"There is only a medium to low probability, that it was you speaking, %1$s"</item>
+    </string-array>
+
+    <!-- Speech - Vocal id low -->
+    <string-array name="array_vocal_id_low" translatable="true">
+        <item>"I was unable to verify the voice footprint."</item>
+        <item>"I could not match the voice footprint."</item>
+        <item>"There was no match for the voice footprint."</item>
+        <item>"I was unable to successfully match the voice footprint."</item>
+        <item>"I was unable to verify that speaker."</item>
+        <item>"I did not recognise that speaker."</item>
+    </string-array>
+
+    <!-- Introduction - name -->
+    <string name="master" translatable="true">"Master"</string>
+
+
+    <!-- GENERIC STRINGS - GENERIC STRINGS - GENERIC STRINGS -->
+    <string name="_and" translatable="true">" and"</string>
+    <string name="low" translatable="true">"low"</string>
+    <string name="medium" translatable="true">"medium"</string>
+    <string name="high" translatable="true">"high"</string>
+    <string name="negative" translatable="true">"negative"</string>
+    <string name="neutral" translatable="true">"neutral"</string>
+    <string name="positive" translatable="true">"positive"</string>
+
+</resources>
