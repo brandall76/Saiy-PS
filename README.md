@@ -21,7 +21,11 @@ Additionally, most of us find AI and the future of our virtual assistants and sm
 
 ## License
 
-The project is licensed under the GNU Affero General Public License V3. This is a copyleft license. I have selected this license over any other, in order to ensure that any adaptations or improvements to the code base, require to be published under the same license. This will protect any hard work from being adapted into closed sourced projects, without giving back.
+The project is licensed under the GNU Affero General Public License V3. This is a copyleft license. See [LICENSE](https://github.com/brandall76/Saiy-PS/blob/master/LICENSE) 
+
+I have selected this license over any other, in order to ensure that any adaptations or improvements to the code base, require to be published under the same license. This will protect any hard work from being adapted into closed sourced projects, without giving back.
+
+The license grant is not for Saiy's trademarks, which include the logo designs. Saiy reserves all trademark and copyright rights in and to all [Saiy trademarks](https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003168669?legacySearch=False).
 
 ## Features
 
