@@ -1,4 +1,9 @@
-# Saiy for Android - Play Services Version
+<a href="https://play.google.com/store/apps/details?id=ai.saiy.android" target="_blank">
+  <img alt="Get it on Google Play"
+       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
+</a>
+
+# Saiy® for Android - Play Services Version
 
 Here lies the open souce version of Saiy for Android, dependent on Google Play Services, which demonstrates how a Virtual Assistant functions, from start to finish.
 
