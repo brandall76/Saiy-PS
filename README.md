@@ -19,13 +19,15 @@ The project itself is too large and the possibilities it presents are too great 
 
 Additionally, most of us find AI and the future of our virtual assistants and smart tech pretty fascinating, but to get involved requires a number of technical stepping stones. I hope by publishing this code and the ease of which commands can be created and adapted, using either simple String matching, a cloud based solution or your own NLP implementation, it will allow many to dive straight in and therefore further their interest.
 
-## License
+## License & Copyright
 
 The project is licensed under the GNU Affero General Public License V3. This is a copyleft license. See [LICENSE](https://github.com/brandall76/Saiy-PS/blob/master/LICENSE) 
 
 I have selected this license over any other, in order to ensure that any adaptations or improvements to the code base, require to be published under the same license. This will protect any hard work from being adapted into closed sourced projects, without giving back.
 
 The license grant is not for Saiy's trademarks, which include the logo designs. Saiy reserves all trademark and copyright rights in and to all [Saiy trademarks](https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003168669?legacySearch=False).
+
+Copyright © 2017 Saiy® Ltd.
 
 ## Features
 
