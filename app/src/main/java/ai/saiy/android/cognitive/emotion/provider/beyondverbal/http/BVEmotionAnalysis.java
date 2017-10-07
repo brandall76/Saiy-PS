@@ -73,7 +73,7 @@ public class BVEmotionAnalysis {
     private static final boolean DEBUG = MyLog.DEBUG;
     private static final String CLS_NAME = BVEmotionAnalysis.class.getSimpleName();
 
-    private static final String ANALYSIS_URL = "https://apiv3.beyondverbal.com/v3/recording/";
+    private static final String ANALYSIS_URL = "https://apiv4.beyondverbal.com/v3/recording/";
     private static final String FROM_MS = "/analysis?fromMs=";
     private static final String AUTHORIZATION = "Authorization";
     private static final String BEARER_ = "Bearer ";

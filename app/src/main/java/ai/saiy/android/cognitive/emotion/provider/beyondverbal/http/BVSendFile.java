@@ -43,7 +43,7 @@ public class BVSendFile {
     private static final boolean DEBUG = MyLog.DEBUG;
     private static final String CLS_NAME = BVSendFile.class.getSimpleName();
 
-    private static final String RECORDING_URL = "https://apiv3.beyondverbal.com/v3/recording/";
+    private static final String RECORDING_URL = "https://apiv4.beyondverbal.com/v3/recording/";
     private static final String AUTHORIZATION = "Authorization";
     private static final String BEARER_ = "Bearer ";
     private static final String CONTENT_TYPE = "Content-Type";

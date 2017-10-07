@@ -62,7 +62,7 @@ public class BVStartRequest {
     private static final boolean DEBUG = MyLog.DEBUG;
     private static final String CLS_NAME = BVStartRequest.class.getSimpleName();
 
-    private static final String START_URL = "https://apiv3.beyondverbal.com/v3/recording/start";
+    private static final String START_URL = "https://apiv4.beyondverbal.com/v3/recording/start";
 
     private static final String AUTHORIZATION = "Authorization";
     private static final String BEARER_ = "Bearer ";

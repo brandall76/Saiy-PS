@@ -419,181 +419,188 @@ public class AnalysisResultHelper {
                 MyLog.i(CLS_NAME, "segments count: " + segments.size());
             }
 
-            final Analysis analysis = segments.get(0).getAnalysis();
+            for (final Segment segment : segments) {
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "constructResponse: segment: getDuration: " + segment.getDuration());
+                    MyLog.i(CLS_NAME, "constructResponse: segment: getOffset: " + segment.getOffset());
+                }
 
-            if (analysis != null) {
+                final Analysis analysis = segment.getAnalysis();
 
-                final Mood mood = analysis.getMood();
+                if (analysis != null) {
 
-                if (mood != null) {
+                    final Mood mood = analysis.getMood();
 
-                    final Composite composite = mood.getComposite();
-                    if (composite != null) {
-                        final Primary compositePrimary = composite.getPrimary();
-                        if (compositePrimary != null) {
+                    if (mood != null) {
 
-                            compositePrimaryPhrase = compositePrimary.getPhrase();
+                        final Composite composite = mood.getComposite();
+                        if (composite != null) {
+                            final Primary compositePrimary = composite.getPrimary();
+                            if (compositePrimary != null) {
 
-                            if (!UtilsString.notNaked(compositePrimaryPhrase)) {
-                                compositePrimaryPhrase = "";
+                                compositePrimaryPhrase = compositePrimary.getPhrase();
+
+                                if (!UtilsString.notNaked(compositePrimaryPhrase)) {
+                                    compositePrimaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood compositePrimary null");
+                                }
                             }
 
+                            final Secondary compositeSecondary = composite.getSecondary();
+                            if (compositeSecondary != null) {
+
+                                compositeSecondaryPhrase = compositeSecondary.getPhrase();
+
+                                if (!UtilsString.notNaked(compositeSecondaryPhrase)) {
+                                    compositeSecondaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood compositeSecondary null");
+                                }
+                            }
                         } else {
                             if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood compositePrimary null");
+                                MyLog.w(CLS_NAME, "segment: mood composite null");
                             }
                         }
 
-                        final Secondary compositeSecondary = composite.getSecondary();
-                        if (compositeSecondary != null) {
+                        final Group7 group7 = mood.getGroup7();
 
-                            compositeSecondaryPhrase = compositeSecondary.getPhrase();
+                        if (group7 != null) {
 
-                            if (!UtilsString.notNaked(compositeSecondaryPhrase)) {
-                                compositeSecondaryPhrase = "";
+                            final Primary group7Primary = group7.getPrimary();
+
+                            if (group7Primary != null) {
+
+                                group7PrimaryPhrase = group7Primary.getPhrase();
+
+                                if (!UtilsString.notNaked(group7PrimaryPhrase)) {
+                                    group7PrimaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group7Primary null");
+                                }
                             }
 
+                            final Secondary group7Secondary = group7.getSecondary();
+
+                            if (group7Secondary != null) {
+
+                                group7SecondaryPhrase = group7Secondary.getPhrase();
+
+                                if (!UtilsString.notNaked(group7SecondaryPhrase)) {
+                                    group7SecondaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group7Secondary null");
+                                }
+                            }
                         } else {
                             if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood compositeSecondary null");
+                                MyLog.w(CLS_NAME, "segment: mood group7 null");
+                            }
+                        }
+
+                        final Group11 group11 = mood.getGroup11();
+
+                        if (group11 != null) {
+
+                            final Primary group11Primary = group11.getPrimary();
+
+                            if (group11Primary != null) {
+
+                                group11PrimaryPhrase = group11Primary.getPhrase();
+
+                                if (!UtilsString.notNaked(group11PrimaryPhrase)) {
+                                    group11PrimaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group11Primary null");
+                                }
+                            }
+
+                            final Secondary group11Secondary = group11.getSecondary();
+
+                            if (group11Secondary != null) {
+
+                                group11SecondaryPhrase = group11Secondary.getPhrase();
+
+                                if (!UtilsString.notNaked(group11SecondaryPhrase)) {
+                                    group11SecondaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group11Secondary null");
+                                }
+                            }
+                        } else {
+                            if (DEBUG) {
+                                MyLog.w(CLS_NAME, "segment: mood group11 null");
+                            }
+                        }
+
+                        final Group21 group21 = mood.getGroup21();
+
+                        if (group21 != null) {
+
+                            final Primary group21Primary = group21.getPrimary();
+
+                            if (group21Primary != null) {
+
+                                group21PrimaryPhrase = group21Primary.getPhrase();
+
+                                if (!UtilsString.notNaked(group21PrimaryPhrase)) {
+                                    group21PrimaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group21Primary null");
+                                }
+                            }
+
+                            final Secondary group21Secondary = group21.getSecondary();
+
+                            if (group21Secondary != null) {
+
+                                group21SecondaryPhrase = group21Secondary.getPhrase();
+
+                                if (!UtilsString.notNaked(group21SecondaryPhrase)) {
+                                    group21SecondaryPhrase = "";
+                                }
+
+                            } else {
+                                if (DEBUG) {
+                                    MyLog.w(CLS_NAME, "segment: mood group21Secondary null");
+                                }
+                            }
+                        } else {
+                            if (DEBUG) {
+                                MyLog.w(CLS_NAME, "segment: mood group21 null");
                             }
                         }
                     } else {
                         if (DEBUG) {
-                            MyLog.w(CLS_NAME, "segment: mood composite null");
-                        }
-                    }
-
-                    final Group7 group7 = mood.getGroup7();
-
-                    if (group7 != null) {
-
-                        final Primary group7Primary = group7.getPrimary();
-
-                        if (group7Primary != null) {
-
-                            group7PrimaryPhrase = group7Primary.getPhrase();
-
-                            if (!UtilsString.notNaked(group7PrimaryPhrase)) {
-                                group7PrimaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group7Primary null");
-                            }
-                        }
-
-                        final Secondary group7Secondary = group7.getSecondary();
-
-                        if (group7Secondary != null) {
-
-                            group7SecondaryPhrase = group7Secondary.getPhrase();
-
-                            if (!UtilsString.notNaked(group7SecondaryPhrase)) {
-                                group7SecondaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group7Secondary null");
-                            }
-                        }
-                    } else {
-                        if (DEBUG) {
-                            MyLog.w(CLS_NAME, "segment: mood group7 null");
-                        }
-                    }
-
-                    final Group11 group11 = mood.getGroup11();
-
-                    if (group11 != null) {
-
-                        final Primary group11Primary = group11.getPrimary();
-
-                        if (group11Primary != null) {
-
-                            group11PrimaryPhrase = group11Primary.getPhrase();
-
-                            if (!UtilsString.notNaked(group11PrimaryPhrase)) {
-                                group11PrimaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group11Primary null");
-                            }
-                        }
-
-                        final Secondary group11Secondary = group11.getSecondary();
-
-                        if (group11Secondary != null) {
-
-                            group11SecondaryPhrase = group11Secondary.getPhrase();
-
-                            if (!UtilsString.notNaked(group11SecondaryPhrase)) {
-                                group11SecondaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group11Secondary null");
-                            }
-                        }
-                    } else {
-                        if (DEBUG) {
-                            MyLog.w(CLS_NAME, "segment: mood group11 null");
-                        }
-                    }
-
-                    final Group21 group21 = mood.getGroup21();
-
-                    if (group21 != null) {
-
-                        final Primary group21Primary = group21.getPrimary();
-
-                        if (group21Primary != null) {
-
-                            group21PrimaryPhrase = group21Primary.getPhrase();
-
-                            if (!UtilsString.notNaked(group21PrimaryPhrase)) {
-                                group21PrimaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group21Primary null");
-                            }
-                        }
-
-                        final Secondary group21Secondary = group21.getSecondary();
-
-                        if (group21Secondary != null) {
-
-                            group21SecondaryPhrase = group21Secondary.getPhrase();
-
-                            if (!UtilsString.notNaked(group21SecondaryPhrase)) {
-                                group21SecondaryPhrase = "";
-                            }
-
-                        } else {
-                            if (DEBUG) {
-                                MyLog.w(CLS_NAME, "segment: mood group21Secondary null");
-                            }
-                        }
-                    } else {
-                        if (DEBUG) {
-                            MyLog.w(CLS_NAME, "segment: mood group21 null");
+                            MyLog.w(CLS_NAME, "segment: mood null");
                         }
                     }
                 } else {
                     if (DEBUG) {
-                        MyLog.w(CLS_NAME, "segment: mood null");
+                        MyLog.i(CLS_NAME, "constructResponse: analysis null");
                     }
-                }
-            } else {
-                if (DEBUG) {
-                    MyLog.i(CLS_NAME, "constructResponse: analysis null");
                 }
             }
         } else {
