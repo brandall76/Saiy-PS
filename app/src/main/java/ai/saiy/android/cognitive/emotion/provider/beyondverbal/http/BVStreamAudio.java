@@ -57,7 +57,7 @@ public class BVStreamAudio implements IMic {
     private final boolean DEBUG = MyLog.DEBUG;
     private final String CLS_NAME = BVStreamAudio.class.getSimpleName();
 
-    private static final String RECORDING_URL = "https://apiv4.beyondverbal.com/v3/recording/";
+    private static final String RECORDING_URL = "https://apiv4.beyondverbal.com/v4/recording/";
     private static final String AUTHORIZATION = "Authorization";
     private static final String BEARER_ = "Bearer ";
     private static final String CONTENT_TYPE = "Content-Type";

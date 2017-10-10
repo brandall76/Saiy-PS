@@ -416,7 +416,7 @@ public class AnalysisResultHelper {
 
         if (UtilsList.notNaked(segments)) {
             if (DEBUG) {
-                MyLog.i(CLS_NAME, "segments count: " + segments.size());
+                MyLog.i(CLS_NAME, "constructResponse: segments count: " + segments.size());
             }
 
             for (final Segment segment : segments) {
@@ -767,6 +767,7 @@ public class AnalysisResultHelper {
                         MyLog.i(CLS_NAME, "analysisResult: temper: getValue: " + temper.getValue());
                         MyLog.i(CLS_NAME, "analysisResult: temper: getMode: " + temper.getMode());
                         MyLog.i(CLS_NAME, "analysisResult: temper: getMean: " + temper.getMean());
+                        MyLog.i(CLS_NAME, "analysisResult: temper: getScore: " + temper.getScore());
                     }
 
                     final Summary temperSummary = temper.getSummary();
@@ -797,6 +798,7 @@ public class AnalysisResultHelper {
                         MyLog.i(CLS_NAME, "analysisResult: valence: getValue: " + valence.getValue());
                         MyLog.i(CLS_NAME, "analysisResult: valence: getMode: " + valence.getMode());
                         MyLog.i(CLS_NAME, "analysisResult: valence: getMean: " + valence.getMean());
+                        MyLog.i(CLS_NAME, "analysisResult: valence: getScore: " + valence.getScore());
                     }
 
                     final Summary valenceSummary = valence.getSummary();
@@ -857,6 +859,7 @@ public class AnalysisResultHelper {
                         MyLog.i(CLS_NAME, "analysisResult: arousal: getValue: " + arousal.getValue());
                         MyLog.i(CLS_NAME, "analysisResult: arousal: getMode: " + arousal.getMode());
                         MyLog.i(CLS_NAME, "analysisResult: arousal: getMean: " + arousal.getMean());
+                        MyLog.i(CLS_NAME, "analysisResult: arousal: getScore: " + arousal.getScore());
                     }
 
                     final Summary arousalSummary = arousal.getSummary();
@@ -934,6 +937,7 @@ public class AnalysisResultHelper {
                                     MyLog.i(CLS_NAME, "analysis: temper: getValue: " + temper.getValue());
                                     MyLog.i(CLS_NAME, "analysis: temper: getMode: " + temper.getMode());
                                     MyLog.i(CLS_NAME, "analysis: temper: getMean: " + temper.getMean());
+                                    MyLog.i(CLS_NAME, "analysis: temper: getScore: " + temper.getScore());
                                 }
 
                                 final Summary temperSummary = temper.getSummary();
@@ -964,6 +968,7 @@ public class AnalysisResultHelper {
                                     MyLog.i(CLS_NAME, "analysis: valence: getValue: " + valence.getValue());
                                     MyLog.i(CLS_NAME, "analysis: valence: getMode: " + valence.getMode());
                                     MyLog.i(CLS_NAME, "analysis: valence: getMean: " + valence.getMean());
+                                    MyLog.i(CLS_NAME, "analysis: valence: getScore: " + valence.getScore());
                                 }
 
                                 final Summary valenceSummary = valence.getSummary();
@@ -1024,6 +1029,7 @@ public class AnalysisResultHelper {
                                     MyLog.i(CLS_NAME, "analysis: arousal: getValue: " + arousal.getValue());
                                     MyLog.i(CLS_NAME, "analysis: arousal: getMode: " + arousal.getMode());
                                     MyLog.i(CLS_NAME, "analysis: arousal: getMean: " + arousal.getMean());
+                                    MyLog.i(CLS_NAME, "analysis: arousal: getScore: " + arousal.getScore());
                                 }
 
                                 final Summary arousalSummary = arousal.getSummary();

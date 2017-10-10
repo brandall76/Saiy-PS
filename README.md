@@ -84,6 +84,19 @@ Installing the [Google Text to Speech Engine](https://play.google.com/store/apps
 
 To use free embedded and offline Voice Recognition, install [Google's 'Now'](https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox&hl=en_GB) application. If you have a Samsung device, their Vlingo recognition service **does not** work correctly for external applications.
 
+## Providers
+
+ - [Nuance Developers](https://developer.nuance.com) - Text to Speech - Speech to Text - NLU 
+ - [Microsoft Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/) - Text to Speech - NLU - Translate API
+ - [IBM Bluemix](https://www.ibm.com/watson/services/speech-to-text/) - Speech to Text  - NLU
+ - [Wit](https://wit.ai/) - Speech to Text - NLU
+ - [PocketSphinx](https://github.com/cmusphinx/pocketsphinx-android-demo) - Speech to Text
+ - [Google Cloud Speech](https://cloud.google.com/speech/) - Speech to Text
+ - [Google Chromium Speech](https://www.chromium.org/developers/how-tos/api-keys) - Speech to Text
+ - [API AI](https://api.ai/) - Speech to Text - NLU
+ - [Beyond Verbal](http://developers.beyondverbal.com) - Emotion analytics
+ - [Wolfram Alpha](https://developer.wolframalpha.com/portal/signin.html) - Knowledge base
+
 ## Troubleshooting
 
 Please use the [Stack Overflow tag](https://stackoverflow.com/tags/saiy/info) for compiling related questions and errors.
@@ -175,4 +188,8 @@ I am entirely self taught in Java, so go easy on me!
 - Localisation
   - If a user is controlling Saiy in a language other than their native (presumably due to it being unsupported), standard String resource management, based on their device Locale, will point to the wrong destination and therefore fail. The resolution of this process is done using a [SupportedLanguage](https://github.com/brandall76/Saiy-PS/blob/master/app/src/main/java/ai/saiy/android/localisation/SupportedLanguage.java) object. Further explanation can be found in the [localisation directory](https://github.com/brandall76/Saiy-PS/tree/master/app/src/main/java/ai/saiy/android/localisation) README.
   
+## Java 8
   
+The code was originally written in Java 8, but had to be reverted due to build [issues with the Jack compiler](https://issuetracker.google.com/issues/37127783)
+
+Now [Jack is deprecated](https://source.android.com/source/jack), I plan to revisit this soon.

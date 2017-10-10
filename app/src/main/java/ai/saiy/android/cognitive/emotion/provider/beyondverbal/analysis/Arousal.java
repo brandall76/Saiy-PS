@@ -35,18 +35,27 @@ public class Arousal {
     @SerializedName("Value")
     private final double value;
 
+    @SerializedName("Score")
+    private final double score;
+
     @SerializedName("Group")
     private final String group;
 
     @SerializedName("Summary")
     private final Summary summary;
 
-    public Arousal(final String group, final double value, final Summary summary, final double mean, final String mode) {
+    public Arousal(final String group, final double value, final Summary summary, final double mean, final String mode,
+                   final double score) {
         this.group = group;
         this.value = value;
         this.summary = summary;
         this.mean = mean;
         this.mode = mode;
+        this.score = score;
+    }
+
+    public double getScore() {
+        return score;
     }
 
     public double getMean() {
