@@ -103,6 +103,8 @@ Please use the [Stack Overflow tag](https://stackoverflow.com/tags/saiy/info) fo
 
 For code issues and crashes, please open an issue.
 
+For discussion, please use the [XDA development thread](https://forum.xda-developers.com/showthread.php?t=1508195) for now.
+
 ## Navigating the Code
 
 In all major areas of the code, I will attempt to add further README files to detail a more specific explanation - including TO-DOs, issues and required improvements. Check the subdirectories of the code to see if a README is present, or a placeholder, letting you know that one should be soon.
