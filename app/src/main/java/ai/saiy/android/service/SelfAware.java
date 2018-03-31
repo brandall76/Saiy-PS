@@ -126,6 +126,7 @@ public class SelfAware extends Service {
     private static final int WARM_UP_LOOP = 4;
 
     public static final int JB_TIMEOUT_ERROR = 134;
+    private static final long OKAY_GOOGLE_DELAY = 500L;
 
     private static final long MONITOR_ENGINE = 10000L;
 
@@ -159,6 +160,8 @@ public class SelfAware extends Service {
     private final IBinder localBinder = new BoundSA();
     private static SelfAware instance = null;
 
+    private TelephonyManager telephonyManager;
+
     /**
      * Exposed instance for local binding.
      */
@@ -170,12 +173,13 @@ public class SelfAware extends Service {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         if (DEBUG) {
             MyLog.i(CLS_NAME, "onCreate");
         }
 
         setInstance();
-        startForeground(false);
+        startForeground(NotificationHelper.NOTIFICATION_SELF_AWARE);
         conditions = new SelfAwareConditions(getApplicationContext(), getTelephonyManager());
         params = new SelfAwareParameters(getApplicationContext());
         cache = new SelfAwareCache(getApplicationContext());
@@ -205,6 +209,22 @@ public class SelfAware extends Service {
             }
 
             new InitStrings(getApplicationContext()).init();
+
+            switch (conditions.checkNotificationInstruction(intent)) {
+
+                case Condition.CONDITION_SELF_AWARE:
+                    if (DEBUG) {
+                        MyLog.i(CLS_NAME, "onStartCommand: CONDITION_SELF_AWARE");
+                    }
+                    startForeground(NotificationHelper.NOTIFICATION_SELF_AWARE);
+                    break;
+                case Condition.CONDITION_NONE:
+                default:
+                    if (DEBUG) {
+                        MyLog.i(CLS_NAME, "onStartCommand: CONDITION_NONE");
+                    }
+                    break;
+            }
 
         } else {
             if (DEBUG) {
@@ -348,6 +368,7 @@ public class SelfAware extends Service {
      *
      * @param bundle of instructions
      */
+    @SuppressWarnings("UnusedParameters")
     protected void startHotwordDetection(@NonNull final Bundle bundle) {
         if (DEBUG) {
             MyLog.i(CLS_NAME, "startHotwordDetection");
@@ -518,6 +539,9 @@ public class SelfAware extends Service {
                         restartEngineMonitor();
                         params.setParams(isSpeakListen, conditions);
 
+                        /*
+                         * Bundle is replace here
+                         */
                         if (conditions.checkConditions(tts, conditions.getDefaultTTS(), bundle)) {
 
                             final String utterance = conditions.getUtterance();
@@ -1018,7 +1042,10 @@ public class SelfAware extends Service {
                                         MyLog.i(CLS_NAME, "NATIVE: PROCESSING");
                                     }
 
-                                    recogNative.stopListening();
+                                    if (recogNative != null) {
+                                        recogNative.stopListening();
+                                    }
+
                                     conditions.manageCallback(CallbackType.CB_ERROR_BUSY, null);
                                     break;
                                 case LISTENING:
@@ -1026,7 +1053,10 @@ public class SelfAware extends Service {
                                         MyLog.i(CLS_NAME, "NATIVE: LISTENING");
                                     }
 
-                                    recogNative.stopListening();
+                                    if (recogNative != null) {
+                                        recogNative.stopListening();
+                                    }
+
                                     conditions.manageCallback(CallbackType.CB_ERROR_BUSY, null);
                                     break;
                             }
@@ -1308,12 +1338,12 @@ public class SelfAware extends Service {
     /**
      * Make sure Android knows we are important.
      */
-    private void startForeground(final boolean showAction) {
+    private void startForeground(final int notificationConstant) {
         if (DEBUG) {
             MyLog.i(CLS_NAME, "startForeground");
         }
 
-        final Notification not = NotificationHelper.getForegroundNotification(SelfAware.this, showAction);
+        final Notification not = NotificationHelper.getForegroundNotification(SelfAware.this, notificationConstant);
 
         try {
             startForeground(NotificationService.NOTIFICATION_FOREGROUND, not);
@@ -1404,7 +1434,7 @@ public class SelfAware extends Service {
             }
             conditions.acquireWakeLock();
             conditions.getSaiySoundPool().play(conditions.getSaiySoundPool().getBeepStart());
-            startForeground(true);
+            startForeground(NotificationHelper.NOTIFICATION_HOTWORD);
         }
 
         @Override
@@ -1432,7 +1462,7 @@ public class SelfAware extends Service {
                             ExecuteIntent.googleNowListen(getApplicationContext(), conditions.isSecure());
                             new GoogleNowMonitor().start(getApplicationContext());
                         }
-                    }, 500);
+                    }, OKAY_GOOGLE_DELAY);
 
                     break;
                 case SaiyHotwordListener.WAKEUP_SAIY:
@@ -1491,7 +1521,7 @@ public class SelfAware extends Service {
             }
 
             conditions.releaseWakeLock();
-            startForeground(false);
+            startForeground(NotificationHelper.NOTIFICATION_SELF_AWARE);
         }
     };
 
@@ -2283,8 +2313,12 @@ public class SelfAware extends Service {
      * @return a {@link TelephonyManager} instance
      */
     private TelephonyManager getTelephonyManager() {
-        final TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        telephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+
+        if (telephonyManager == null) {
+            telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+            telephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        }
+
         return telephonyManager;
     }
 
@@ -2323,6 +2357,11 @@ public class SelfAware extends Service {
         releasePartialHelper();
         motionRecognition.destroy();
         conditions.releaseWakeLock();
+
+        if (telephonyManager != null) {
+            telephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+        }
+
         destroyInstance();
     }
 

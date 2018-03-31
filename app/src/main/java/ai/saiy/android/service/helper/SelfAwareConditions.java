@@ -111,6 +111,7 @@ import ai.saiy.android.ui.notification.NotificationHelper;
 import ai.saiy.android.utils.Conditions.Network;
 import ai.saiy.android.utils.MyLog;
 import ai.saiy.android.utils.SPH;
+import ai.saiy.android.utils.UtilsBundle;
 import ai.saiy.android.utils.UtilsList;
 import ai.saiy.android.utils.UtilsLocale;
 import ai.saiy.android.utils.UtilsString;
@@ -991,7 +992,6 @@ public class SelfAwareConditions extends SelfAwareHelper implements IConditionLi
         }
     }
 
-
     /**
      * Get the current {@link Callback}
      *
@@ -1276,6 +1276,44 @@ public class SelfAwareConditions extends SelfAwareHelper implements IConditionLi
             remoteCallbacks.finishBroadcast();
         }
     }
+
+    public int checkNotificationInstruction(@Nullable final Intent startCommandIntent) {
+
+        if (startCommandIntent != null) {
+
+            final Bundle startCommandBundle = startCommandIntent.getExtras();
+
+            if (UtilsBundle.notNaked(startCommandBundle)) {
+
+                switch (startCommandBundle.getInt(LocalRequest.EXTRA_CONDITION, Condition.CONDITION_NONE)) {
+
+                    case Condition.CONDITION_SELF_AWARE:
+                        if (DEBUG) {
+                            MyLog.i(CLS_NAME, "checkNotificationInstruction: CONDITION_SELF_AWARE");
+                        }
+                        return Condition.CONDITION_SELF_AWARE;
+                    case Condition.CONDITION_NONE:
+                    default:
+                        if (DEBUG) {
+                            MyLog.i(CLS_NAME, "checkNotificationInstruction: CONDITION_NONE");
+                        }
+                        return Condition.CONDITION_NONE;
+                }
+
+            } else {
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "checkNotificationInstruction: startCommandBundle naked");
+                }
+            }
+        } else {
+            if (DEBUG) {
+                MyLog.i(CLS_NAME, "checkNotificationInstruction: startCommandIntent null");
+            }
+        }
+
+        return Condition.CONDITION_NONE;
+    }
+
 
     /**
      * Check if the current recognition session detected the {@link CC#COMMAND_CANCEL}

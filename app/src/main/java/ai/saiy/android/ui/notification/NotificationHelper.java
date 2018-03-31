@@ -50,9 +50,15 @@ public final class NotificationHelper {
     private static final boolean DEBUG = MyLog.DEBUG;
     private static final String CLS_NAME = NotificationHelper.class.getSimpleName();
 
-    private static final int MIN_NOTIFICATION_SPEECH_LENGTH = 35;
+    public static final int MIN_NOTIFICATION_SPEECH_LENGTH = 35;
+
+    public static final int NOTIFICATION_SELF_AWARE = 0;
+    public static final int NOTIFICATION_HOTWORD = 1;
+    public static final int NOTIFICATION_DRIVING_PROFILE = 2;
+    public static final int NOTIFICATION_TUTORIAL = 3;
 
     public static final String NOTIFICATION_CHANNEL_PERMANENT = "not_channel_permanent";
+    public static final String NOTIFICATION_CHANNEL_PRIORITY = "not_channel_priority";
     public static final String NOTIFICATION_CHANNEL_INTERACTION = "not_channel_interaction";
     public static final String NOTIFICATION_CHANNEL_INFORMATION = "not_channel_information";
 
@@ -88,6 +94,15 @@ public final class NotificationHelper {
             mChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
             notificationManager.createNotificationChannel(mChannel);
 
+            mChannel = new NotificationChannel(NOTIFICATION_CHANNEL_PRIORITY,
+                    ctx.getString(R.string.menu_not_channel_priority), NotificationManager.IMPORTANCE_DEFAULT);
+
+            mChannel.setDescription(ctx.getString(R.string.menu_not_channel_priority_description));
+            mChannel.enableLights(false);
+            mChannel.enableVibration(false);
+            mChannel.setSound(null, null);
+            notificationManager.createNotificationChannel(mChannel);
+
             mChannel = new NotificationChannel(NOTIFICATION_CHANNEL_INTERACTION,
                     ctx.getString(R.string.menu_not_channel_interaction), NotificationManager.IMPORTANCE_LOW);
 
@@ -113,10 +128,11 @@ public final class NotificationHelper {
     /**
      * Start the foreground notification
      *
-     * @param ctx        the application context
-     * @param showAction true if the hotword shutdown action button should be displayed
+     * @param ctx                  the application context
+     * @param notificationConstant integer constant denoting if a notification action button should be displayed
      */
-    public static Notification getForegroundNotification(@NonNull final Context ctx, final boolean showAction) {
+    @SuppressWarnings("deprecation")
+    public static Notification getForegroundNotification(@NonNull final Context ctx, final int notificationConstant) {
         if (DEBUG) {
             MyLog.i(CLS_NAME, "getForegroundNotification");
         }
@@ -135,37 +151,97 @@ public final class NotificationHelper {
                     actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
 
-        final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx,
-                NOTIFICATION_CHANNEL_PERMANENT);
+        String channel;
 
-        builder.setContentIntent(pendingIntent).setSmallIcon(ai.saiy.android.R.mipmap.ic_launcher)
+        switch (notificationConstant) {
+
+            case NOTIFICATION_HOTWORD:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_HOTWORD");
+                }
+                channel = NOTIFICATION_CHANNEL_PRIORITY;
+                break;
+            case NOTIFICATION_DRIVING_PROFILE:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_DRIVING_PROFILE");
+                }
+                channel = NOTIFICATION_CHANNEL_PRIORITY;
+                break;
+            case NOTIFICATION_TUTORIAL:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_TUTORIAL");
+                }
+                channel = NOTIFICATION_CHANNEL_PRIORITY;
+                break;
+            case NOTIFICATION_SELF_AWARE:
+            default:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_SELF_AWARE");
+                }
+                channel = NOTIFICATION_CHANNEL_PERMANENT;
+                break;
+
+        }
+
+        final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, channel);
+
+        final String contentTitle;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            contentTitle = ctx.getString(R.string.app_name);
+        } else {
+            contentTitle = ctx.getString(R.string.app_name);
+        }
+
+        builder.setContentIntent(pendingIntent).setSmallIcon(R.mipmap.ic_launcher)
                 .setTicker(ctx.getString(ai.saiy.android.R.string.notification_ticker))
                 .setWhen(System.currentTimeMillis())
-                .setContentTitle(ctx.getString(ai.saiy.android.R.string.app_name))
+                .setContentTitle(contentTitle)
                 .setOngoing(true)
-                .setContentText(String.format(ctx.getString(ai.saiy.android.R.string.notification_ai_level), AI.getAILevel()));
+                .setContentText(String.format(ctx.getString(ai.saiy.android.R.string.notification_ai_level),
+                        AI.getAILevel()));
 
-        if (showAction) {
+        PendingIntent actionPendingIntent;
 
-            actionIntent.putExtra(NotificationService.CLICK_ACTION, NotificationService.NOTIFICATION_HOTWORD);
+        switch (notificationConstant) {
 
-            final PendingIntent actionPendingIntent = PendingIntent.getService(ctx,
-                    NotificationService.NOTIFICATION_HOTWORD, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            builder.addAction(R.drawable.ic_blur, ctx.getString(R.string.notification_stop_hotword),
-                    actionPendingIntent);
+            case NOTIFICATION_HOTWORD:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_HOTWORD");
+                }
 
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                //noinspection deprecation
-                builder.setPriority(Notification.PRIORITY_MAX);
-            } else {
-                builder.setColorized(true);
+                actionIntent.putExtra(NotificationService.CLICK_ACTION, NotificationService.NOTIFICATION_HOTWORD);
+
+                actionPendingIntent = PendingIntent.getService(ctx,
+                        NotificationService.NOTIFICATION_HOTWORD, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                builder.addAction(R.drawable.ic_blur, ctx.getString(R.string.notification_stop_hotword),
+                        actionPendingIntent);
+
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                    builder.setPriority(Notification.PRIORITY_MAX);
+                } else {
+                    builder.setColorized(true);
+                    builder.setColor(Color.RED);
+                }
+
+                break;
+
+            case NOTIFICATION_SELF_AWARE:
+            default:
+                if (DEBUG) {
+                    MyLog.i(CLS_NAME, "getForegroundNotification: NOTIFICATION_SELF_AWARE");
+                }
+
+                builder.setColorized(false);
                 builder.setColor(Color.RED);
-            }
-        } else {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                //noinspection deprecation
-                builder.setPriority(Notification.PRIORITY_MIN);
-            }
+
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                    builder.setPriority(Notification.PRIORITY_MIN);
+                }
+
+                break;
+
         }
 
         return builder.build();
@@ -190,8 +266,7 @@ public final class NotificationHelper {
             final PendingIntent pendingIntent = PendingIntent.getService(ctx, NotificationService.NOTIFICATION_LISTENING,
                     actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-            final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx,
-                    NOTIFICATION_CHANNEL_INTERACTION);
+            final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, NOTIFICATION_CHANNEL_INTERACTION);
 
             builder.setContentIntent(pendingIntent).setSmallIcon(android.R.drawable.ic_btn_speak_now)
                     .setTicker(ctx.getString(ai.saiy.android.R.string.notification_listening)).setWhen(System.currentTimeMillis())
@@ -200,6 +275,10 @@ public final class NotificationHelper {
                             + ctx.getString(ai.saiy.android.R.string.notification_tap_cancel))
                     .setAutoCancel(true);
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -249,8 +328,7 @@ public final class NotificationHelper {
                 final PendingIntent pendingIntent = PendingIntent.getService(ctx, NotificationService.NOTIFICATION_SPEAKING,
                         actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx,
-                        NOTIFICATION_CHANNEL_INTERACTION);
+                final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, NOTIFICATION_CHANNEL_INTERACTION);
 
                 builder.setContentIntent(pendingIntent).setSmallIcon(android.R.drawable.ic_media_pause)
                         .setTicker(ctx.getString(ai.saiy.android.R.string.notification_speaking)).setWhen(System.currentTimeMillis())
@@ -259,6 +337,10 @@ public final class NotificationHelper {
                                 + ctx.getString(ai.saiy.android.R.string.notification_tap_stop))
                         .setAutoCancel(true);
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    builder.setColorized(false);
+                    builder.setColor(Color.RED);
+                }
 
                 final Notification not = builder.build();
                 final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -319,6 +401,10 @@ public final class NotificationHelper {
                             + ctx.getString(ai.saiy.android.R.string.notification_tap_cancel))
                     .setAutoCancel(true);
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -365,8 +451,7 @@ public final class NotificationHelper {
             final PendingIntent pendingIntent = PendingIntent.getService(ctx, NotificationService.NOTIFICATION_INITIALISING,
                     actionIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-            final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx,
-                    NOTIFICATION_CHANNEL_INTERACTION);
+            final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, NOTIFICATION_CHANNEL_INTERACTION);
 
             builder.setContentIntent(pendingIntent).setSmallIcon(android.R.drawable.ic_popup_sync)
                     .setTicker(ctx.getString(ai.saiy.android.R.string.notification_initialising_tts))
@@ -375,6 +460,11 @@ public final class NotificationHelper {
                     .setContentText(ctx.getString(ai.saiy.android.R.string.notification_initialising_tts) + "... "
                             + ctx.getString(ai.saiy.android.R.string.notification_tap_cancel))
                     .setAutoCancel(true);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -430,6 +520,10 @@ public final class NotificationHelper {
                             + ctx.getString(ai.saiy.android.R.string.notification_tap_cancel))
                     .setAutoCancel(true);
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -486,6 +580,11 @@ public final class NotificationHelper {
                     .setContentText(ctx.getString(ai.saiy.android.R.string.permission_notification_text))
                     .setAutoCancel(true);
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
+
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(NotificationService.NOTIFICATION_PERMISSIONS, not);
@@ -524,6 +623,11 @@ public final class NotificationHelper {
                     .setContentTitle(ctx.getString(ai.saiy.android.R.string.app_name))
                     .setContentText(ctx.getString(R.string.emotion_notification_text))
                     .setAutoCancel(true);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -577,6 +681,11 @@ public final class NotificationHelper {
                     .setContentTitle(ctx.getString(ai.saiy.android.R.string.app_name))
                     .setContentText(ctx.getString(R.string.vocal_notification_text))
                     .setAutoCancel(true);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                builder.setColorized(false);
+                builder.setColor(Color.RED);
+            }
 
             final Notification not = builder.build();
             final NotificationManager notificationManager = (NotificationManager)

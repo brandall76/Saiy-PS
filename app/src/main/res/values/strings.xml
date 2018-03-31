@@ -59,7 +59,7 @@
     <string name="sound_bible" translatable="false">Sound Bible</string>
     <string name="license_sound_bible" translatable="false">Credit Mike Koenig @ Soundbible.com</string>
 
-    <!-- App Strings -->
+    <!-- App Strings -->7
 
     <!-- Preserve HTML -->
     <string name="content_disclaimer" translatable="true">here is the application disclaimer.</string>
@@ -134,6 +134,8 @@
     <string name="menu_not_channel_interaction_description" translatable="true">"Blar."</string>
     <string name="menu_not_channel_information" translatable="true">"Information"</string>
     <string name="menu_not_channel_information_description" translatable="true">"Blar"</string>
+    <string name="menu_not_channel_priority" translatable="true">"Priority"</string>
+    <string name="menu_not_channel_priority_description" translatable="true">"Blar"</string>
 
     <!-- UI Strings -->
     <string name="menu_tap_begin" translatable="true">tap to begin</string>

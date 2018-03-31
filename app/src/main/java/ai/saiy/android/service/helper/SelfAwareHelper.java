@@ -23,6 +23,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -831,7 +832,12 @@ public class SelfAwareHelper {
 
         final Intent intent = new Intent(ctx, SelfAware.class);
         intent.setAction(ctx.getApplicationContext().getPackageName());
-        ctx.getApplicationContext().startService(intent);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            ctx.getApplicationContext().startForegroundService(intent);
+        } else {
+            ctx.getApplicationContext().startService(intent);
+        }
     }
 
     /**
